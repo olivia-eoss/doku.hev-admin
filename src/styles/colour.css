@@ -1,0 +1,49 @@
+:root {
+
+  /* deine Design Tokens */
+  --green: #2e8555;
+  --light-green: #a2cbb6;
+  --white: #ffffff;
+  --black: #24372c;
+  --grey: #ededed;
+
+  /* Starlight überschreiben */
+  --sl-color-accent-low: var(--light-green);
+  --sl-color-accent: var(--green);
+  --sl-color-accent-high: var(--black);
+
+  --sl-color-text: var(--black);
+  --sl-color-text-accent: var(--green);
+  --sl-color-text-invert: var(--white);
+
+  --sl-color-bg: var(--white);
+  --sl-color-bg-nav: var(--white);
+  --sl-color-bg-sidebar: var(--white);
+
+  --sl-color-hairline: var(--grey);
+
+}
+
+:root[data-theme="dark"] {
+
+  --green: #a2cbb6;
+  --light-green: #2e8555;
+  --white: #24372c;
+  --black: #ffffff;
+  --grey: #bfbfbf;
+
+  --sl-color-accent-low: var(--light-green);
+  --sl-color-accent: var(--green);
+  --sl-color-accent-high: var(--black);
+
+  --sl-color-text: var(--black);
+  --sl-color-text-accent: var(--green);
+  --sl-color-text-invert: var(--white);
+
+  --sl-color-bg: var(--white);
+  --sl-color-bg-nav: var(--white);
+  --sl-color-bg-sidebar: var(--white);
+
+  --sl-color-hairline: var(--grey);
+
+}

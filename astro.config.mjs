@@ -8,7 +8,8 @@ export default defineConfig({
 		starlight({
 			title: 'HEV Doku',
 			logo: {
-        		src: './src/assets/Logo.svg', alt: 'Mein Logo',
+    			light: './src/assets/Logo.svg',
+    			dark: './src/assets/Logo-dark.svg',
 				replacesTitle: true,
 			},
 			customCss: [
