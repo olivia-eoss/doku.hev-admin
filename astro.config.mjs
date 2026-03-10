@@ -6,7 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'HEV Doku',
+			title: 'HEV Dokumentation',
 			logo: {
     			light: './src/assets/Logo.svg',
     			dark: './src/assets/Logo-dark.svg',
