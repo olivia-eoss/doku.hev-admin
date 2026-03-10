@@ -1,0 +1,59 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+
+interface Props {
+  label: string;
+  href: string;
+  variant?: "filled" | "outline";
+  arrow?: boolean;
+}
+
+const { label, href, variant = "filled", arrow = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class={`btn btn--${variant}`}
+  target={arrow ? "_blank" : "_self"}
+  rel={arrow ? "noopener noreferrer" : undefined}
+  >{label}{arrow && <ArrowUpRight size={18} />}</a
+>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xxxs);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    font-weight: 600;
+    text-decoration: none;
+    padding: var(--spacing-xxs) var(--spacing-md);
+    border-radius: 8px;
+    border: 2px solid var(--green);
+    transition:
+      background 200ms ease,
+      color 200ms ease;
+    white-space: nowrap;
+  }
+
+  .btn--filled {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .btn--filled:hover {
+    background: var(--black);
+    border-color: var(--black);
+  }
+
+  .btn--outline {
+    background: transparent;
+    color: var(--green);
+  }
+
+  .btn--outline:hover {
+    background: var(--green);
+    color: var(--white);
+  }
+</style>

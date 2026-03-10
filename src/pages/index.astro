@@ -1,8 +1,21 @@
 ---
-import HomeLayout from "../layouts/CustomLayout.astro";
+import Button from "../components/Button.astro";
+import CustomLayout from "../layouts/CustomLayout.astro";
 ---
 
-<HomeLayout>
+<CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
   <!-- Inhalt kommt hier rein -->
   <h1>hallo</h1>
-</HomeLayout>
+
+  <!-- Grüner Button ohne Pfeil -->
+  <Button label="Kontakt" href="/kontakt" />
+
+  <!-- Outline Button ohne Pfeil -->
+  <Button label="Kontakt" href="/kontakt" variant="outline" />
+
+  <!-- Grüner Button mit Pfeil → öffnet neuen Tab -->
+  <Button label="Mehr erfahren" href="https://hev.ch" arrow />
+
+  <!-- Outline Button mit Pfeil -->
+  <Button label="Mehr erfahren" href="https://hev.ch" variant="outline" arrow />
+</CustomLayout>

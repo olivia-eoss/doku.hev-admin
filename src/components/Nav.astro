@@ -1,0 +1,111 @@
+---
+import { getCollection } from "astro:content";
+import {
+  FileText,
+  Users,
+  CreditCard,
+  DollarSign,
+  BarChart2,
+} from "lucide-astro";
+
+const docs = await getCollection("docs");
+
+const iconMap: Record<string, any> = {
+  mitglieder: Users,
+  rechnungen: CreditCard,
+  zahlungen: DollarSign,
+  berichte: BarChart2,
+};
+
+const navItems = docs
+  .filter((entry) => entry.id.split("/").length === 1)
+  .filter((entry) => entry.id !== "index")
+  .map((entry) => {
+    // Erstes File in diesem Ordner suchen
+    const firstFile = docs
+      .filter(
+        (e) => e.id.startsWith(`${entry.id}/`) && e.id.split("/").length > 1,
+      )
+      .sort((a, b) => a.id.localeCompare(b.id))[0];
+
+    return {
+      href: firstFile ? `/${firstFile.id}` : `/${entry.id}`,
+      label: entry.id.charAt(0).toUpperCase() + entry.id.slice(1),
+      Icon: iconMap[entry.id] ?? FileText,
+    };
+  });
+---
+
+<nav class="nav" id="mainNav">
+  {
+    navItems.map(({ href, label, Icon }) => (
+      <a href={href} class="nav__link">
+        <Icon size={16} class="nav__icon" />
+        <span>{label}</span>
+      </a>
+    ))
+  }
+</nav>
+
+<style>
+  .nav {
+    display: flex;
+    gap: var(--spacing-xxs);
+    margin-inline: auto;
+  }
+
+  .nav__link {
+    display: flex;
+    align-items: center;
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--light-green) 30%, transparent);
+    height: 40px;
+    padding-inline: var(--spacing-md);
+    transition: background 200ms ease;
+    white-space: nowrap;
+    gap: var(--spacing-xxs);
+  }
+
+  .nav__link:hover {
+    background: color-mix(in srgb, var(--light-green) 60%, transparent);
+  }
+
+  @media (max-width: 1280px) {
+    .nav {
+      gap: var(--spacing-xxxs);
+    }
+
+    .nav__link {
+      padding-inline: var(--spacing-xs);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      display: none;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--white);
+      border-bottom: 1px solid var(--grey);
+      flex-direction: column;
+      padding: var(--spacing-xs) var(--spacing-md);
+      gap: var(--spacing-xxs);
+      z-index: 99;
+      margin-inline: 0;
+    }
+
+    .nav.is-open {
+      display: flex;
+    }
+
+    .nav__link {
+      padding-inline: var(--spacing-md);
+    }
+  }
+</style>

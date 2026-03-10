@@ -1,0 +1,82 @@
+---
+import Logo from "../assets/Logo.svg";
+import Search from "@astrojs/starlight/components/Search.astro";
+import Button from "../components/Button.astro";
+import Nav from "./Nav.astro";
+import { Menu } from "lucide-astro";
+---
+
+<header class="header">
+  <div class="container-full header__inner">
+    <a href="/" class="header__logo">
+      <Logo />
+    </a>
+    <Nav />
+    <Search />
+
+    <div class="header__cta-wrap">
+      <Button label="Kontakt" href="/kontakt" />
+    </div>
+
+    <button class="header__menu-btn" id="menuBtn" type="button">
+      <Menu size={24} />
+    </button>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mainNav");
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      nav.classList.toggle("is-open");
+    });
+  }
+</script>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    border-bottom: 1px solid var(--grey);
+    height: 64px;
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    height: 100%;
+  }
+
+  .header__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .header__menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 1140px) {
+    .header__cta-wrap {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header__menu-btn {
+      display: flex;
+      margin-left: auto;
+    }
+  }
+</style>

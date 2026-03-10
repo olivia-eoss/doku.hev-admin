@@ -20,6 +20,8 @@
 
   --sl-color-hairline: var(--grey);
 
+  --sl-color-gray-5: var(--green);
+
 }
 
 :root[data-theme="dark"] {
