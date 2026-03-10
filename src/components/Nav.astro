@@ -34,6 +34,10 @@ const navItems = docs
       Icon: iconMap[entry.id] ?? FileText,
     };
   });
+console.log(
+  "IDs auf Vercel:",
+  docs.map((e) => e.id),
+);
 ---
 
 <nav class="nav" id="mainNav">
