@@ -1,0 +1,130 @@
+
+/* Poppins */
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/500.css";
+@import "@fontsource/poppins/600.css";
+@import "@fontsource/poppins/700.css";
+
+/* Space Grotesk */
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/700.css";
+
+:root {
+  --font-body: "Poppins", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+
+  --font-size-h1: 64px;
+  --font-size-h2: 40px;
+  --font-size-h3: 24px;
+  --font-size-h4: 18px;
+  --font-size-body: 16px;
+
+  --font-size-h1-mobile: 32px;
+  --font-size-h2-mobile: 24px;
+  --font-size-h3-mobile: 18px;
+  --font-size-h4-mobile: 14px;
+  --font-size-body-mobile: 14px;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--sl-color-text);
+  background: var(--sl-color-bg);
+  margin: 0;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.1;
+  margin: 0;
+}
+
+h4,
+h5,
+h6,
+p,
+li,
+a,
+span,
+button,
+input {
+  font-family: var(--font-body);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  font-weight: 700;
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+}
+
+p,
+li,
+a,
+span,
+button,
+input {
+  font-size: var(--font-size-body);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-xs);
+}
+
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: var(--font-size-h1-mobile);
+  }
+
+  h2 {
+    font-size: var(--font-size-h2-mobile);
+  }
+
+  h3 {
+    font-size: var(--font-size-h3-mobile);
+  }
+
+  h4 {
+    font-size: var(--font-size-h4-mobile);
+  }
+
+  p,
+  li,
+  a,
+  span,
+  button,
+  input {
+    font-size: var(--font-size-body-mobile);
+  }
+}

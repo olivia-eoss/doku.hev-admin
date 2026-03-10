@@ -1,6 +1,4 @@
 :root {
-
-  /* deine Design Tokens */
   --green: #2e8555;
   --light-green: #a2cbb6;
   --white: #ffffff;
@@ -25,7 +23,6 @@
 }
 
 :root[data-theme="dark"] {
-
   --green: #a2cbb6;
   --light-green: #2e8555;
   --white: #24372c;

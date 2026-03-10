@@ -1,1 +1,42 @@
 @import './colour.css';
+@import './font.css';
+
+
+:root {
+    --spacing-xxxs: 4px;
+    --spacing-xxs: 8px;
+    --spacing-xs: 16px;
+    --spacing-sm: 24px;
+    --spacing-md: 32px;
+    --spacing-lg: 40px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+    --spacing-xxxl: 96px;
+
+    --page-margin: 64px;
+    --content-width: 1312px;
+    --small-width: 1184px;
+
+}
+
+.container-full,
+.container-content,
+.container-small {
+  width: 100%;
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.container-full {
+  padding-inline: var(--page-margin);
+}
+
+.container-content {
+  max-width: calc(var(--content-width) + (var(--page-margin) * 2));
+  padding-inline: var(--page-margin);
+}
+
+.container-small {
+  max-width: calc(var(--small-width) + (var(--page-margin) * 4));
+  padding-inline: calc(var(--page-margin) * 2);
+}
