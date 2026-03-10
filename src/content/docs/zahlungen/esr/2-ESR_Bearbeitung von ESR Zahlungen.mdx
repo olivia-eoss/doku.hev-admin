@@ -1,0 +1,59 @@
+---
+title: ESR Bearbeitung von ESR Zahlungen
+date: 2021-07-01T00:00:00.000Z
+author: Olivia
+modifiedDate: null
+description: "Zahlungen importieren / ESR Bearbeitung / camt.054 Import / V11 / ESR Zahlungen bearbeiten"
+---
+
+
+## ESR Zahlungen bearbeiten
+
+Um die Zahlungen zu bearbeiten, wechseln Sie aus dem ersten Register ins Register mit den Zahlungszeilen:
+![ESR Zeilen anzeigen](/esr/esr_zeilen.png)
+
+**WICHTIG:** Immer wenn Sie eine Aktion in den Zeilen ausgewählt oder sonst eine Änderung vorgenommen haben, müssen Sie über das Aktionsmenü "ESR verarbeiten" auswählen und ausführen. Nur dann werden die Zeilen beurteilt und neue Daten verarbeitet.
+![ESR erneut verarbeiten](/esr/esr_verarbeiten.png)
+
+Bei der Bearbeitung der Zahlungen können Sie immer direkt in die jeweilige Zeile tippen. In der Spalte Aktion können Sie mittels Doppelklick die Aktionen anzeigen, in den Feldern "Geschäftspartner" und "Rechnung" können Sie durch Doppelklick die Bearbeitung aktivieren.
+
+Bei der Bearbeitung von ESR Zahlungen unterscheiden wir grundsätzlich vier Fälle:
+
+### 1. Überzahlungen
+
+Wenn ein Mitglied einen zu hohen Betrag einbezahlt, das kann auch eine vollständige Zahlung sein, wenn das Mitglied die aktuelle Rechnung bereits bezahlt hat, wird dies als Überzahlung gewertet. Bei einer Überzahlung stehen die folgenden Aktionen zur Auswahl:
+![ESR Überzahlung](/esr/esr_ueberzahlung.png)
+
+Der häufigste Fall ist, dass die Einzahlung als Guthaben auf das nächste Jahr übertragen werden soll. In dem Fall wählen Sie die Aktion "Zahlung mit der nächsten Rechnung verrechnen" aus.
+Die übrigen Aktionen wären:
+
+- Ertrag kann nicht zugewiesen werden: Dabei wird keine Aktion vom System ausgeführt, die Zahlung wird lediglich verbucht.
+- Überzahlbetrag wurde zurücküberwiesen: In dem Fall bucht das System eine Ausgangszahlung. Das hat keinen unmittelbaren Einfluss resp. Unterschied zur obigen Option. Im obigen Fall kann die Zahlung jedoch in Zukunft als Guthaben verbucht werden, in diesem Fall nicht.
+
+### 2. Unterzahlungen
+
+Im Falle einer Unterzahlung stellt Ihnen das System ebenfalls automatisch die korrekten Aktionen zur Auswahl:
+
+- Betrag abschreiben: Das bedeutet, dass Sie auf die restliche Forderung verzichten
+-Betrag mahnen: Das bedeutet, dass Sie den noch offenen Restbetrag mit dem nächsten Mahnlauf mahnen
+
+ 
+
+### 3. Zahlung mit alter ESR Referenz
+
+Wenn eine Zahlung mit einer alten ESR Referenz vorgenommen wurde, schlägt Ihnen das System die gleichen Optionen wie bei Fall 1 vor. Wichtig ist, dass Sie in diesen Fällen immer die Rechnungsnummer aus dem Import prüfen:
+![ESR Rechnugnsnummern](/esr/rechnungsnummer_ESR.png)
+
+Aktuell haben wir im HEV Admin V3 6-stellige Nummern. Die Nummern aus dem HEV Admin V2 sind 7-stellig. Wenn Sie also in der Spalte eine höhere 7-stellige Nummer entdecken, ist dies mit grösster Wahrscheinlichkeit eine Rechnungsnummer aus dem Vorjahr. In dem Fall empfehlen wir beim entsprechenden Mitglied zu prüfen, ob es eine neuere Rechnung gibt, welche offen ist. Falls dies der Fall ist, können Sie wie folgt vorgehen:
+
+1.Machen Sie einen Doppelklick auf die alte Rechnungsnummer.
+
+2.löschen Sie die alte Rechnungsnummer und tragen Sie die neue Rechnungsnummer ein.
+
+3.Starten Sie über das Aktionsmenü (oben links, drei Punkte) die Aktion "ESR verarbeiten" => das können Sie auch machen, nach dem alle ESR Zahlungen bearbeitet wurden.
+
+### 4. Zahlung ohne korrekte ESR Referenz
+
+Wenn keine ESR Referenz im System zu der Referenz des Zahlungseingangs passt, können Sie an Hand der Referenz versuchen den Absender zu ermitteln. Bitte beachten Sie, dass neu die IDs und nicht die Rechnungs- und Mitgliedernummern in der ESR Referenz abgelegt werden.
+
+Sobald Sie die richtige Rechnungsnummer gefunden haben, können Sie diese eintragen und wie bei Fall 3 verarbeiten.
