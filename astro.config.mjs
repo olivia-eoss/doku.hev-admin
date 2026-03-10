@@ -6,8 +6,14 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: 'HEV Doku',
+			logo: {
+        		src: './src/assets/Logo.svg', alt: 'Mein Logo',
+				replacesTitle: true,
+			},
+			customCss: [
+        		'./src/styles/global.css',
+      		],
 			sidebar: [
 				{
 					label: 'Guides',
