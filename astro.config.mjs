@@ -17,15 +17,20 @@ export default defineConfig({
       		],
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Mitglider',
+					autogenerate: { directory: 'mitglieder' },
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Rechnungen',
+					autogenerate: { directory: 'rechnungen' },
+				},
+				{
+					label: 'Zahlungen',
+					autogenerate: { directory: 'zahlungen' },
+				},
+				{
+					label: 'Berichte',
+					autogenerate: { directory: 'berichte' },
 				},
 			],
 		}),
