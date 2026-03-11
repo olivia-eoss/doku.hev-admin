@@ -1,0 +1,175 @@
+---
+import { FileText, Download } from "lucide-astro";
+
+export interface DownloadItem {
+  title: string;
+  description: string;
+  href: string;
+  type?: string;
+}
+
+export interface Props {
+  title?: string;
+  description?: string;
+  items: DownloadItem[];
+}
+
+const { title = "Downloads", description, items } = Astro.props;
+---
+
+<section class="download-section">
+  <div class="container-small download-container">
+    <div class="download-header">
+      <h2>{title}</h2>
+      {description && <p>{description}</p>}
+    </div>
+
+    <div class="download-grid">
+      {
+        items.map((item) => (
+          <a
+            href={item.href}
+            class="download-card"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="download-card__top">
+              <div class="download-card__icon">
+                <FileText size={20} />
+              </div>
+              {item.type && (
+                <span class="download-card__badge">{item.type}</span>
+              )}
+            </div>
+            <div class="download-card__body">
+              <h3 class="download-card__title">{item.title}</h3>
+              <div class="download-card__footer">
+                <p class="download-card__desc">{item.description}</p>
+                <Download size={18} class="download-card__dl-icon" />
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-section {
+    width: 100%;
+    background: var(--white);
+  }
+
+  .download-container {
+    padding-top: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+  }
+
+  .download-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .download-header h2 {
+    margin: 0 0 var(--spacing-xxs) 0;
+  }
+
+  .download-header p {
+    margin: 0 auto;
+    color: var(--black);
+    opacity: 0.7;
+    line-height: 1.5;
+    max-width: 480px;
+  }
+
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .download-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+    background: var(--grey);
+    border-radius: 16px;
+    text-decoration: none;
+    transition:
+      box-shadow 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .download-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.08),
+      0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+  }
+
+  .download-card__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .download-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: var(--white);
+    border-radius: 8px;
+    color: var(--green);
+  }
+
+  .download-card__badge {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--black);
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+  }
+
+  .download-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+  }
+
+  .download-card__title {
+    margin: 0;
+    font-size: var(--font-size-h3);
+    color: var(--black);
+  }
+
+  .download-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-xxs);
+  }
+
+  .download-card__desc {
+    margin: 0;
+    font-size: 14px;
+    color: var(--black);
+    opacity: 0.7;
+    line-height: 1.4;
+  }
+
+  .download-card__dl-icon {
+    flex-shrink: 0;
+    color: var(--green);
+  }
+
+  @media (max-width: 600px) {
+    .download-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

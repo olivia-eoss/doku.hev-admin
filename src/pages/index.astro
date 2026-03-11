@@ -5,6 +5,7 @@ import CategoryGrid from "../components/CategoryGrid.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import TreeColumn from "../components/TreeColumn.astro";
 import Support from "../components/Support.astro";
+import DownloadSection from "../components/DownloadSection.astro";
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
@@ -76,5 +77,23 @@ import Support from "../components/Support.astro";
     description="Unser Support-Team steht Ihnen täglich zur Verfügung, um Ihnen bei allen Anliegen rund um metasfresh zu helfen. Zögern Sie nicht, uns zu kontaktieren – wir sind hier, um sicherzustellen, dass Sie das Beste aus unserem Mitgliederverwaltungssystem herausholen können."
     buttonLabel="Zum Support"
     buttonHref="/support"
+  />
+  <DownloadSection
+    title="Downloads"
+    description="Um die Zugriffsberechtigung zu ändern oder neu zu erstellen müssen Sie das Formular ausfüllen und uns schicken."
+    items={[
+      {
+        title: "metasfresh",
+        description: "Antrag Zugriff HEV metasfresh",
+        href: "/downloads/antrag-metasfresh.pdf",
+        type: "PDF",
+      },
+      {
+        title: "Typo 3",
+        description: "Antrag Zugriff Backend User Typo 3",
+        href: "/downloads/antrag-typo3.pdf",
+        type: "PDF",
+      },
+    ]}
   />
 </CustomLayout>
