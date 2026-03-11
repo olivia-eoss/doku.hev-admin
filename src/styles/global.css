@@ -113,3 +113,17 @@ dialog li {
 dialog li:hover {
   background: var(--light-green);
 }
+
+dialog[open] {
+  padding: 24px;
+}
+
+
+dialog .sl-search-results {
+  padding: 16px 8px 8px 8px;
+}
+
+
+dialog .sl-search-results li {
+  padding: 12px 8px;
+}
