@@ -1,8 +1,45 @@
 ---
 import CustomLayout from "../layouts/CustomLayout.astro";
 import Hero from "../components/Hero.astro";
+import CategoryGrid from "../components/CategoryGrid.astro";
+import CategoryCard from "../components/CategoryCard.astro";
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
   <Hero />
+  <CategoryGrid>
+    <CategoryCard
+      href="/mitglieder"
+      iconName="Users"
+      variant="green"
+      size="normal"
+      title="Mitglieder"
+      description="Mitgliederdaten erfassen, bearbeiten und verwalten."
+    />
+    <CategoryCard
+      href="/zahlungen"
+      iconName="DollarSign"
+      variant="light-green"
+      size="small"
+      title="Zahlungen"
+      description="Zahlungen verbuchen und ESR Importe"
+    />
+    <CategoryCard
+      href="/rechnung"
+      iconName="CreditCard"
+      variant="grey"
+      size="small"
+      title="Rechnung"
+      description="Rechnungen erstellen, suchen und Mahnungen"
+    />
+    <CategoryCard
+      href="/berichte"
+      iconName="BarChart3"
+      variant="dark-green"
+      size="wide"
+      title="Berichte"
+      description="Auswertungen erstellen und Daten exportieren"
+      decorationIconName="BarChart3"
+    />
+  </CategoryGrid>
 </CustomLayout>

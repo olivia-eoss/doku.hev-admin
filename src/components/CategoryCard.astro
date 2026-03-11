@@ -1,0 +1,235 @@
+---
+import * as LucideIcons from "lucide-astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  iconName: string;
+  variant?: "green" | "light-green" | "dark-green" | "grey";
+  size?: "normal" | "small" | "wide";
+  decorationIconName?: string;
+}
+
+const {
+  title,
+  description,
+  href,
+  iconName,
+  variant = "green",
+  size = "normal",
+  decorationIconName,
+} = Astro.props;
+
+const Icon = (LucideIcons as any)[iconName];
+const DecorationIcon = decorationIconName
+  ? (LucideIcons as any)[decorationIconName]
+  : null;
+---
+
+<a href={href} class={`category-card variant-${variant} size-${size}`}>
+  {
+    size !== "wide" && (
+      <div class="icon-container">
+        <Icon class="main-icon" />
+      </div>
+    )
+  }
+
+  <div class="card-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+
+  {
+    DecorationIcon && size === "wide" && (
+      <div class="decoration-icon">
+        <DecorationIcon size={120} />
+      </div>
+    )
+  }
+</a>
+
+<style>
+  .category-card {
+    position: relative;
+    display: flex;
+    border-radius: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.08),
+      0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .category-card:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 24px 30px -5px rgba(0, 0, 0, 0.13),
+      0 10px 14px -6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+  }
+
+  .size-normal {
+    flex-direction: column;
+    padding: var(--spacing-sm);
+    justify-content: space-between;
+  }
+
+  .size-normal .icon-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .size-normal .card-content {
+    margin-top: auto;
+  }
+
+  .size-small {
+    flex-direction: column;
+    padding: var(--spacing-sm);
+  }
+
+  .size-small .icon-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .size-small .card-content {
+    margin-top: auto;
+  }
+
+  .size-wide {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-sm);
+  }
+
+  .size-wide .card-content {
+    flex: 1;
+  }
+
+  .variant-green {
+    background: var(--green);
+    color: var(--white);
+  }
+
+  .variant-green .card-content h3,
+  .variant-green .card-content p {
+    color: var(--white);
+  }
+
+  .variant-green .icon-container :global(.main-icon) {
+    color: var(--white);
+    opacity: 0.3;
+  }
+
+  .variant-light-green {
+    background: var(--light-green);
+    color: var(--black);
+  }
+
+  .variant-light-green .icon-container :global(.main-icon) {
+    color: var(--green);
+    opacity: 0.6;
+  }
+
+  .variant-dark-green {
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .variant-dark-green .card-content h3,
+  .variant-dark-green .card-content p {
+    color: var(--white);
+  }
+
+  .variant-grey {
+    background: var(--grey);
+    color: var(--black);
+  }
+
+  .variant-grey .icon-container :global(.main-icon) {
+    color: var(--black);
+    opacity: 0.4;
+  }
+
+  .size-normal .icon-container :global(.main-icon) {
+    width: 200px;
+    height: 200px;
+  }
+
+  .size-small .icon-container :global(.main-icon) {
+    width: 96px;
+    height: 96px;
+  }
+
+  .decoration-icon {
+    flex-shrink: 0;
+    color: var(--green);
+    opacity: 0.6;
+  }
+
+  .card-content h3 {
+    margin: 0 0 var(--spacing-xxxs) 0;
+    font-size: var(--font-size-h3);
+  }
+
+  .card-content p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 900px) {
+    .size-normal,
+    .size-small {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 160px;
+    }
+
+    .size-normal .icon-container,
+    .size-small .icon-container {
+      flex: 0 0 auto;
+      order: 2;
+      opacity: 0.5;
+    }
+
+    .size-normal .card-content,
+    .size-small .card-content {
+      margin-top: 0;
+      order: 1;
+      flex: 1;
+    }
+
+    .size-normal .icon-container :global(.main-icon),
+    .size-small .icon-container :global(.main-icon) {
+      width: 96px;
+      height: 96px;
+    }
+
+    .variant-green .icon-container {
+      opacity: 0.3;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .size-normal .icon-container,
+    .size-small .icon-container,
+    .decoration-icon {
+      display: none;
+    }
+  }
+</style>
