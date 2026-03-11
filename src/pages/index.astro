@@ -4,6 +4,7 @@ import Hero from "../components/Hero.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import TreeColumn from "../components/TreeColumn.astro";
+import Support from "../components/Support.astro";
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
@@ -69,5 +70,11 @@ import TreeColumn from "../components/TreeColumn.astro";
         href: "/rechnungen/fakturierung/einzelfakturierung/",
       },
     ]}
+  />
+  <Support
+    title="Brauchen Sie Unterstützung?"
+    description="Unser Support-Team steht Ihnen täglich zur Verfügung, um Ihnen bei allen Anliegen rund um metasfresh zu helfen. Zögern Sie nicht, uns zu kontaktieren – wir sind hier, um sicherzustellen, dass Sie das Beste aus unserem Mitgliederverwaltungssystem herausholen können."
+    buttonLabel="Zum Support"
+    buttonHref="/support"
   />
 </CustomLayout>
