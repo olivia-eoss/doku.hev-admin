@@ -16,6 +16,11 @@ export default defineConfig({
 			customCss: [
         		'./src/styles/global.css',
       		],
+
+						components: {
+				Header: './src/components/CustomHeader.astro',
+	
+			},
 			sidebar: [
 				{
 					label: 'Mitglieder',

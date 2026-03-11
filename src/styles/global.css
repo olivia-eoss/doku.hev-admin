@@ -17,7 +17,10 @@
     --content-width: 1312px;
     --small-width: 1900px;
 
+
 }
+
+
 
 .container-full,
 .container-content,
@@ -39,4 +42,33 @@
 .container-small {
   max-width: 900px;
 margin: 0 auto;
+}
+
+[data-has-hero] header,
+.site-header,
+.header {
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+}
+
+.sl-header {
+  padding: 0 !important;
+  border-bottom: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sl-header__content,
+.sl-nav,
+.sl-flex {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+
+.page > header > header {
+  all: unset;
 }
