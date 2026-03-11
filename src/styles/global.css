@@ -119,11 +119,18 @@ dialog[open] {
 }
 
 
-dialog .sl-search-results {
-  padding: 16px 8px 8px 8px;
+dialog .search-results {
+  background: var(--grey);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 12px;
 }
 
 
 dialog .sl-search-results li {
   padding: 12px 8px;
+}
+
+dialog[open] {
+  padding: 24px;
 }
