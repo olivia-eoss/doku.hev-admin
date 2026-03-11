@@ -19,22 +19,22 @@ export default defineConfig({
 				{
 					label: 'Mitglider',
 					autogenerate: { directory: 'mitglieder' },
-collapsed: true,
+	
 				},
 				{
 					label: 'Rechnungen',
 					autogenerate: { directory: 'rechnungen' },
-collapsed: true,
+
 				},
 				{
 					label: 'Zahlungen',
 					autogenerate: { directory: 'zahlungen' },
-	collapsed: true,
+
 				},
 				{
 					label: 'Berichte',
 					autogenerate: { directory: 'berichte' },
-					collapsed: true,
+
 				},
 			],
 		}),
