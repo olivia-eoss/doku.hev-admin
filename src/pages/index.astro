@@ -3,6 +3,7 @@ import CustomLayout from "../layouts/CustomLayout.astro";
 import Hero from "../components/Hero.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import CategoryCard from "../components/CategoryCard.astro";
+import TreeColumn from "../components/TreeColumn.astro";
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
@@ -42,4 +43,31 @@ import CategoryCard from "../components/CategoryCard.astro";
       decorationIconName="BarChart3"
     />
   </CategoryGrid>
+  <TreeColumn
+    title="Meist genutzte Prozesse"
+    description="Die wichtigsten Workflows für den Alltag."
+    items={[
+      {
+        number: "01",
+        title: "Neues Mitglied erfassen",
+        description:
+          "Erfassung eines neuen Mitglieds in metasfresh – von der Eingabe der Stammdaten bis zur erfolgreichen Speicherung.",
+        href: "/mitglieder/neuaufnahme",
+      },
+      {
+        number: "02",
+        title: "Adressänderung",
+        description:
+          "Aktualisierung bestehender Mitgliedsdaten, damit Adressänderungen korrekt im System übernommen werden.",
+        href: "/mitglieder/adresse",
+      },
+      {
+        number: "03",
+        title: "Rechnung erstellen",
+        description:
+          "Eine neue Rechnung für ein Mitglied erstellen und im System verbuchen.",
+        href: "/rechnung/erstellen",
+      },
+    ]}
+  />
 </CustomLayout>
