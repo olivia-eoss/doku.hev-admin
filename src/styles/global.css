@@ -72,40 +72,186 @@ margin: 0 auto;
 .page > header > header {
   all: unset;
 }
-/* Such Modal */
-/* Such Modal */
-dialog[open] {
-  padding: 0;
-  border-radius: 16px;
-  overflow: hidden;
-}
 
-/* oberer Bereich mit Input */
-dialog form {
-  background: var(--grey);
-  padding: 24px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-    flex-direction: row-reverse;
-}
 
-/* Cancel Button */
-dialog button {
-  color: var(--green);
-  font-weight: 500;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
+site-search button[data-open-modal] {
+    background-color: #ffffff !important;
+    border: 2px solid #ededed !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 0.9rem !important;
+    color: #242d2c !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    width: 100% !important;
+  }
 
-/* Search Input */
-dialog input[type="search"] {
-  flex: 1;
-  background: var(--white);
-  border: 1px solid var(--grey);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 16px;
-}
+  site-search button[data-open-modal]:hover {
+    border-color: #2e8555 !important;
+    box-shadow: 0 2px 8px rgba(46, 133, 85, 0.2) !important;
+  }
 
+  site-search button[data-open-modal] svg {
+    color: #2e8555 !important;
+  }
+
+  site-search button[data-open-modal] kbd {
+    background-color: #ededed !important;
+    border: 1px solid #ededed !important;
+    border-radius: 4px !important;
+    padding: 0.2rem 0.4rem !important;
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 0.75rem !important;
+    color: #242d2c !important;
+    margin-left: auto !important;
+  }
+
+  site-search dialog {
+    background-color: #ffffff !important;
+    border: 1px solid #ededed !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    max-width: 640px !important;
+    width: 90% !important;
+    padding: 0 !important;
+    margin: 10vh auto !important;
+    max-height: 80vh !important;
+    overflow: hidden !important;
+  }
+
+  site-search dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  site-search .dialog-frame {
+    padding: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+  }
+
+  /* ===================================
+     Search Input im Modal
+     =================================== */
+  site-search dialog input[type="text"] {
+    font-family: "Space Grotesk", sans-serif !important;
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    border: 2px solid #ededed !important;
+    border-radius: 8px !important;
+    color: #242d2c !important;
+    width: 100% !important;
+  }
+
+  site-search dialog input[type="text"]:focus {
+    outline: none !important;
+    border-color: #2e8555 !important;
+  }
+
+  /* ===================================
+     Close/Abbrechen Button
+     =================================== */
+  site-search dialog button[data-close-modal] {
+    background-color: transparent !important;
+    border: none !important;
+    color: #242d2c !important;
+    cursor: pointer !important;
+    padding: 0.5rem !important;
+    font-size: 0.9rem !important;
+    transition: background-color 0.2s !important;
+  }
+
+  site-search dialog button[data-close-modal]:hover {
+    background-color: #ededed !important;
+    border-radius: 6px !important;
+  }
+
+  /* ===================================
+     Pagefind Container
+     =================================== */
+  site-search #starlight__search {
+    padding: 0 !important;
+  }
+
+  .pagefind-ui {
+    font-family: "Space Grotesk", sans-serif !important;
+  }
+
+  .pagefind-ui__form {
+    margin-bottom: 1rem !important;
+  }
+
+  /* ===================================
+     Suchergebnisse
+     =================================== */
+  .pagefind-ui__results {
+    max-height: 50vh !important;
+    overflow-y: auto !important;
+  }
+
+  .pagefind-ui__result {
+    border: 1px solid #ededed !important;
+    border-radius: 8px !important;
+    padding: 1rem !important;
+    margin-bottom: 0.75rem !important;
+    transition: all 0.3s ease !important;
+    background: white !important;
+  }
+
+  .pagefind-ui__result:hover {
+    border-color: #2e8555 !important;
+    background-color: rgba(46, 133, 85, 0.05) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 2px 8px rgba(46, 133, 85, 0.1) !important;
+  }
+
+  .pagefind-ui__result-title {
+    color: #2e8555 !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .pagefind-ui__result-link {
+    color: #2e8555 !important;
+    text-decoration: none !important;
+  }
+
+  .pagefind-ui__result-link:hover {
+    text-decoration: underline !important;
+  }
+
+  .pagefind-ui__result-excerpt {
+    color: #242d2c !important;
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ===================================
+     Highlighted Search Terms
+     =================================== */
+  site-search mark,
+  .pagefind-ui mark {
+    background-color: rgba(46, 133, 85, 0.2) !important;
+    color: #242d2c !important;
+    padding: 0.1rem 0.2rem !important;
+    border-radius: 3px !important;
+    font-weight: 600 !important;
+  }
+
+  /* ===================================
+     Keine Ergebnisse Message
+     =================================== */
+  .pagefind-ui__message {
+    color: #242d2c !important;
+    font-family: "Space Grotesk", sans-serif !important;
+    text-align: center !important;
+    padding: 2rem !important;
+  }
