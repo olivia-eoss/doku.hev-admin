@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 
 const docs = await getCollection("docs");
-console.log(docs.map((e) => e.id));
 
 const navItems = docs
   .filter((entry) => entry.id.split("/").length === 1)

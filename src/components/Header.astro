@@ -78,5 +78,15 @@ import { Menu } from "lucide-astro";
       display: flex;
       margin-left: auto;
     }
+
+    /* Nur das Search-Icon zeigen, Input ausblenden */
+    :global(.sl-search-input) {
+      display: none;
+    }
+
+    :global(.sl-search) {
+      min-width: unset;
+      width: auto;
+    }
   }
 </style>
