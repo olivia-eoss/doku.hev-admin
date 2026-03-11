@@ -1,0 +1,86 @@
+<footer class="footer">
+  <div class="container-full footer__inner">
+    <div class="footer__address">
+      <p>
+        <b class="footer__company">eoss INFORMATIK AG</b><br />
+
+        Burgerrietstrasse 13<br />
+        8730 Uznach<br />
+        <a href="tel:+41555052200">Telefon 055 505 22 00</a><br />
+        <a href="mailto:hello@eoss.ch">hello@eoss.ch</a>
+      </p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Footer Navigation">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/kontakt">Kontakt</a>
+    </nav>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--sl-color-accent);
+    color: var(--white);
+    padding: var(--spacing-xl) 0;
+  }
+
+  .footer__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--spacing-lg);
+  }
+
+  .footer__address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .footer__company {
+    font-weight: 700;
+    margin-bottom: var(--spacing-xxs);
+  }
+
+  .footer__address a {
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .footer__address a:hover {
+    text-decoration: underline;
+  }
+
+  .footer__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    flex-shrink: 0;
+  }
+
+  .footer__nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .footer__nav a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-lg);
+    }
+
+    .footer__nav {
+      gap: var(--spacing-md);
+    }
+  }
+</style>
