@@ -73,9 +73,7 @@ margin: 0 auto;
   all: unset;
 }
 
-/* ==============================
-   Search Modal (nur wenn geöffnet)
-================================ */
+
 
 site-search dialog[open] {
   background: var(--white);
@@ -96,7 +94,6 @@ site-search dialog[open]::backdrop {
   backdrop-filter: blur(4px);
 }
 
-/* Modal Content */
 
 site-search dialog[open] .dialog-frame {
   padding: var(--spacing-sm);
@@ -108,9 +105,6 @@ site-search dialog[open] .dialog-frame {
   overflow-y: auto;
 }
 
-/* ==============================
-   Search Input
-================================ */
 
 site-search dialog[open] input[type="text"] {
   width: 100%;
@@ -129,7 +123,6 @@ site-search dialog[open] input[type="text"]:focus {
   border-color: var(--green);
 }
 
-/* Close Button */
 
 site-search dialog[open] button[data-close-modal] {
   padding: .5rem;
@@ -146,9 +139,7 @@ site-search dialog[open] button[data-close-modal]:hover {
   border-radius: 6px;
 }
 
-/* ==============================
-   Search Results
-================================ */
+
 
 site-search dialog[open] .pagefind-ui {
   font-family: var(--font-body);
@@ -194,7 +185,6 @@ site-search dialog[open] .pagefind-ui__result-excerpt {
   color: var(--black);
 }
 
-/* Highlight */
 
 site-search dialog[open] .pagefind-ui mark {
   background: rgba(46,133,85,.2);
@@ -204,7 +194,6 @@ site-search dialog[open] .pagefind-ui mark {
   font-weight: 600;
 }
 
-/* No results */
 
 site-search dialog[open] .pagefind-ui__message {
   text-align: center;
