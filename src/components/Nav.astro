@@ -1,38 +1,18 @@
 ---
 import { getCollection } from "astro:content";
+import { getFirstDocHref } from "../utils/getFirstDocHref";
 
 const docs = await getCollection("docs");
 
-const navItems = docs
-  .filter((entry) => entry.id.split("/").length === 1)
-  .filter((entry) => entry.id !== "index")
-  .map((entry) => {
-    const sectionId = entry.id;
-
-    // Alle Docs die in diesem Abschnitt liegen (Unterseiten)
-    const sectionDocs = docs
-      .filter((d) => d.id.startsWith(sectionId + "/"))
-      .sort((a, b) => a.id.localeCompare(b.id));
-
-    // Ersten Unterordner finden
-    const firstSubfolder = sectionDocs
-      .map((d) => d.id.split("/")[1])
-      .find((segment) => segment !== undefined);
-
-    // Erstes File im ersten Unterordner
-    const firstDoc = sectionDocs.find(
-      (d) => d.id.split("/")[1] === firstSubfolder,
-    );
-
-    const href = firstDoc
-      ? `/${firstDoc.id.replace(/\/index$/, "")}`
-      : `/${sectionId}`;
-
-    return {
-      href,
+const navItems = await Promise.all(
+  docs
+    .filter((entry) => entry.id.split("/").length === 1)
+    .filter((entry) => entry.id !== "index")
+    .map(async (entry) => ({
+      href: await getFirstDocHref(entry.id),
       label: entry.data.title,
-    };
-  });
+    })),
+);
 ---
 
 <nav class="nav" id="mainNav">

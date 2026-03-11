@@ -6,13 +6,20 @@ import CategoryCard from "../components/CategoryCard.astro";
 import TreeColumn from "../components/TreeColumn.astro";
 import Support from "../components/Support.astro";
 import DownloadSection from "../components/DownloadSection.astro";
+
+import { getFirstDocHref } from "../utils/getFirstDocHref";
+
+const mitgliederHref = await getFirstDocHref("mitglieder");
+const zahlungenHref = await getFirstDocHref("zahlungen");
+const rechnungHref = await getFirstDocHref("rechnungen");
+const berichteHref = await getFirstDocHref("berichte");
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
   <Hero />
   <CategoryGrid>
     <CategoryCard
-      href="/mitglieder"
+      href={mitgliederHref}
       iconName="Users"
       variant="green"
       size="normal"
@@ -20,7 +27,7 @@ import DownloadSection from "../components/DownloadSection.astro";
       description="Mitgliederdaten erfassen, bearbeiten und verwalten."
     />
     <CategoryCard
-      href="/zahlungen"
+      href={zahlungenHref}
       iconName="DollarSign"
       variant="light-green"
       size="small"
@@ -28,7 +35,7 @@ import DownloadSection from "../components/DownloadSection.astro";
       description="Zahlungen verbuchen und ESR Importe"
     />
     <CategoryCard
-      href="/rechnung"
+      href={rechnungHref}
       iconName="CreditCard"
       variant="grey"
       size="small"
@@ -36,7 +43,7 @@ import DownloadSection from "../components/DownloadSection.astro";
       description="Rechnungen erstellen, suchen und Mahnungen"
     />
     <CategoryCard
-      href="/berichte"
+      href={berichteHref}
       iconName="BarChart3"
       variant="dark-green"
       size="wide"
