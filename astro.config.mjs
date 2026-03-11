@@ -6,6 +6,7 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
+			
 			title: 'HEV Dokumentation',
 			logo: {
     			light: './src/assets/Logo.svg',
@@ -17,22 +18,26 @@ export default defineConfig({
       		],
 			sidebar: [
 				{
-					label: 'Mitglider',
-					autogenerate: { directory: 'mitglieder' },
+					label: 'Mitglieder',
+					collapsed: true,
+					autogenerate: { directory: 'mitglieder',  collapsed: true, },
 	
 				},
 				{
 					label: 'Rechnungen',
+										collapsed: true,
 					autogenerate: { directory: 'rechnungen' },
 
 				},
 				{
 					label: 'Zahlungen',
+										collapsed: true,
 					autogenerate: { directory: 'zahlungen' },
 
 				},
 				{
 					label: 'Berichte',
+										collapsed: true,
 					autogenerate: { directory: 'berichte' },
 
 				},
