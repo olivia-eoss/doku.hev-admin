@@ -118,6 +118,10 @@ p {
   text-decoration: underline;
 }
 
+.sidebar-content a,
+.sidebar-content summary {
+  text-transform: capitalize;
+}
 
 @media (max-width: 768px) {
   h1 {
