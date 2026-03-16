@@ -1,0 +1,130 @@
+---
+import { BookOpen, Video, Headphones } from "lucide-astro";
+
+export interface Props {
+  card1Title: string;
+  card1Description: string;
+  card1Href: string;
+  card2Title: string;
+  card2Description: string;
+  card2Href: string;
+  card3Title: string;
+  card3Description: string;
+  card3Href: string;
+}
+
+const {
+  card1Title,
+  card1Description,
+  card1Href,
+  card2Title,
+  card2Description,
+  card2Href,
+  card3Title,
+  card3Description,
+  card3Href,
+} = Astro.props;
+---
+
+<div class="hero-right">
+  <a href={card1Href} class="card card-primary card-hover">
+    <BookOpen class="card-icon" size={40} />
+    <div class="card-content">
+      <h3>{card1Title}</h3>
+      <p>{card1Description}</p>
+    </div>
+  </a>
+
+  <a href={card2Href} class="card card-secondary card-hover">
+    <Video class="card-icon" size={40} />
+    <div class="card-content">
+      <h3>{card2Title}</h3>
+      <p>{card2Description}</p>
+    </div>
+  </a>
+
+  <a href={card3Href} class="card card-tertiary card-wide card-hover">
+    <Headphones class="card-icon" size={40} />
+    <div class="card-content">
+      <h3>{card3Title}</h3>
+      <p>{card3Description}</p>
+    </div>
+  </a>
+</div>
+
+<style>
+  .hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 180px auto;
+    gap: var(--spacing-xs);
+    padding-top: var(--spacing-md);
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    padding: var(--spacing-sm);
+    border-radius: 16px;
+    text-decoration: none;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxs);
+  }
+
+  .card h3 {
+    margin: 0;
+  }
+  .card p {
+    margin: 0;
+  }
+
+  .card-primary {
+    background: var(--green);
+    color: var(--white);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .card-primary .card-icon {
+    color: var(--white);
+  }
+
+  .card-secondary {
+    background: var(--light-green);
+    color: var(--black);
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .card-secondary .card-icon {
+    color: var(--black);
+  }
+
+  .card-tertiary {
+    background: var(--grey);
+    color: var(--black);
+  }
+
+  .card-tertiary .card-icon {
+    color: var(--black);
+  }
+
+  .card-wide {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  @media (max-width: 640px) {
+    .hero-right {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

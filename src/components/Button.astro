@@ -38,6 +38,7 @@ const { label, href, variant = "filled", arrow = false } = Astro.props;
       transform 200ms ease,
       box-shadow 200ms ease;
     white-space: nowrap;
+    align-items: flex-start;
   }
 
   .btn--filled {
@@ -56,6 +57,7 @@ const { label, href, variant = "filled", arrow = false } = Astro.props;
 
   .btn--filled:hover {
     filter: brightness(0.85);
+    color: var(--black);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var;
   }

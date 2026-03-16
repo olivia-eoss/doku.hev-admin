@@ -1,0 +1,48 @@
+---
+import { CircleCheckBig } from "lucide-astro";
+
+export interface Props {
+  items: string[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="feature-list">
+  {
+    items.map((item) => (
+      <li class="feature-item">
+        <CircleCheckBig size={20} class="checkmark" />
+        <span>{item}</span>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .feature-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxs) var(--spacing-sm);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+  }
+
+  .checkmark {
+    color: var(--green);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .feature-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,6 +1,8 @@
 ---
 import CustomLayout from "../layouts/CustomLayout.astro";
-import Hero from "../components/Hero.astro";
+import HeroText from "../components/HeroText.astro";
+import FeatureList from "../components/FeatureList.astro";
+import HeroCards from "../components/HeroCards.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import CategoryCard from "../components/CategoryCard.astro";
 import TreeColumn from "../components/TreeColumn.astro";
@@ -16,7 +18,39 @@ const berichteHref = await getFirstDocHref("berichte");
 ---
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
-  <Hero />
+  <section class="hero-section container-content">
+    <div class="hero-layout">
+      <div class="hero-left">
+        <HeroText
+          highlight="METASFRESH"
+          title="einfach erklärt"
+          description="Ihre zentrale Anlaufstelle für die Nutzung des metasfresh Mitgliederverwaltungssystems. Hier finden Sie verständliche Anleitungen, hilfreiche Tipps und weiterführende Informationen – von den Grundlagen bis zu fortgeschrittenen Funktionen."
+          buttonLabel="Kontakt"
+          buttonHref="/kontakt"
+        />
+        <FeatureList
+          items={[
+            "Einfach zu bedienen",
+            "Video-Tutorials",
+            "Umfassende Dokumentation",
+            "Täglicher Support",
+          ]}
+        />
+      </div>
+      <HeroCards
+        card1Title="Anleitungen"
+        card1Description="Alle Anleitungen auf einen Blick."
+        card1Href="/anleitungen"
+        card2Title="Support"
+        card2Description="Wir helfen gerne weiter."
+        card2Href="/kontakt"
+        card3Title="Neuer metasfresh Nutzer anfragen"
+        card3Description="Laden Sie sich das Formular herunter."
+        card3Href="/kontakt"
+      />
+    </div>
+  </section>
+
   <CategoryGrid
     title="Unsere Anleitungen in Bereiche Unterteilt"
     description="Wählen Sie eine Kategorie aus, um detaillierte Anleitungen und Hilfestellungen zu erhalten."
@@ -85,8 +119,6 @@ const berichteHref = await getFirstDocHref("berichte");
   <Support
     title="Brauchen Sie Unterstützung?"
     description="Unser Support-Team steht Ihnen täglich zur Verfügung, um Ihnen bei allen Anliegen rund um metasfresh zu helfen. Zögern Sie nicht, uns zu kontaktieren – wir sind hier, um sicherzustellen, dass Sie das Beste aus unserem Mitgliederverwaltungssystem herausholen können."
-    buttonLabel="Zum Support"
-    buttonHref="/kontakt"
   />
   <DownloadSection
     id="download"
@@ -108,3 +140,28 @@ const berichteHref = await getFirstDocHref("berichte");
     ]}
   />
 </CustomLayout>
+
+<style>
+  .hero-section {
+    padding-block: var(--spacing-xl);
+  }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: start;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  @media (max-width: 1024px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

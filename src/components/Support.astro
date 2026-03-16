@@ -6,11 +6,9 @@ import Button from "./Button.astro";
 export interface Props {
   title: string;
   description: string;
-  buttonLabel: string;
-  buttonHref: string;
 }
 
-const { title, description, buttonLabel, buttonHref } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <div class="container-small support-container">
