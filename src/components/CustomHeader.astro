@@ -3,7 +3,7 @@ import Logo from "../assets/Logo.svg";
 import Search from "@astrojs/starlight/components/Search.astro";
 import Button from "../components/Button.astro";
 import Nav from "./Nav.astro";
-import { Menu } from "lucide-astro";
+import { Menu, Sun, Moon } from "lucide-astro";
 ---
 
 <header class="header sl-header">
@@ -23,17 +23,47 @@ import { Menu } from "lucide-astro";
     <button class="header__menu-btn" id="menuBtn" type="button">
       <Menu size={24} />
     </button>
+    <button
+      class="theme-toggle"
+      id="themeToggle"
+      type="button"
+      aria-label="Theme wechseln"
+    >
+      <Sun size={20} id="iconSun" />
+      <Moon size={20} id="iconMoon" />
+    </button>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById("menuBtn");
-  const nav = document.getElementById("mainNav");
-  if (btn && nav) {
-    btn.addEventListener("click", () => {
-      nav.classList.toggle("is-open");
-    });
+  const toggle = document.getElementById("themeToggle");
+  const sun = document.getElementById("iconSun");
+  const moon = document.getElementById("iconMoon");
+
+  function getTheme() {
+    return (
+      localStorage.getItem("starlight-theme") ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light")
+    );
   }
+
+  function applyTheme(theme: string) {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem("starlight-theme", theme);
+    if (sun && moon) {
+      sun.style.display = theme === "dark" ? "none" : "block";
+      moon.style.display = theme === "dark" ? "block" : "none";
+    }
+  }
+
+  applyTheme(getTheme());
+
+  toggle?.addEventListener("click", () => {
+    const current = document.documentElement.dataset.theme;
+    applyTheme(current === "dark" ? "light" : "dark");
+  });
 </script>
 
 <style>
@@ -67,6 +97,23 @@ import { Menu } from "lucide-astro";
     cursor: pointer;
     color: var(--black);
     flex-shrink: 0;
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--black);
+    padding: var(--spacing-xxxs);
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle:hover {
+    background: var(--grey);
   }
 
   @media (max-width: 1140px) {

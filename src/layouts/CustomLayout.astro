@@ -13,12 +13,16 @@ const { title = "HEV Doku", description = "Willkommen zur HEV Dokumentation" } =
 ---
 
 <!doctype html>
-<html lang="de" dir="ltr">
+<html lang="de" dir="ltr" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <script is:inline>
+      const theme = localStorage.getItem("starlight-theme") || "light";
+      document.documentElement.dataset.theme = theme;
+    </script>
   </head>
   <body>
     <Header />
