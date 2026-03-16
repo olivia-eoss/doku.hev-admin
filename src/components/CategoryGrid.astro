@@ -4,10 +4,7 @@ export interface Props {
   description?: string;
 }
 
-const {
-  title = "Unsere Anleitungen",
-  description = "Wählen Sie eine Kategorie aus, um detaillierte Anleitungen und Hilfestellungen zu erhalten.",
-} = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <section class="category-section">
@@ -45,7 +42,6 @@ const {
 
   .category-header p {
     color: var(--black);
-    opacity: 0.7;
     max-width: 520px;
     margin: 0 auto;
     line-height: 1.5;

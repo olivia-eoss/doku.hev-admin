@@ -12,14 +12,10 @@ export interface Props {
   items: ProcessItem[];
 }
 
-const {
-  title = "Meist genutzte Prozesse",
-  description = "Die wichtigsten Workflows für den Alltag.",
-  items = [],
-} = Astro.props;
+const { title, description, items = [] } = Astro.props;
 ---
 
-<section class="container-full process-section">
+<section class="container-content process-section">
   <div class="process-container">
     <div class="process-header">
       <h2>{title}</h2>

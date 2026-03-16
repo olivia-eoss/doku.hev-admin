@@ -1,7 +1,17 @@
 ---
 import CustomLayout from "../layouts/CustomLayout.astro";
+import TwoColumn from "../components/TwoColumn.astro";
 ---
 
 <CustomLayout title="Kontakt" description="Haben Sie Fragen?">
-  <h1>Kontakt</h1>
+  <div class="container-small">
+    <h1>Brauchen Sie Hilfe?</h1>
+    <p>
+      Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne
+      persönlich für Sie da. Unser Support-Team steht dir bei Fragen jederzeit
+      zur Verfügung
+    </p>
+  </div>
+
+  <TwoColumn emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
 </CustomLayout>

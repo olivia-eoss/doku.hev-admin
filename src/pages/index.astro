@@ -17,7 +17,10 @@ const berichteHref = await getFirstDocHref("berichte");
 
 <CustomLayout title="Startseite" description="Willkommen zur HEV Dokumentation">
   <Hero />
-  <CategoryGrid>
+  <CategoryGrid
+    title="Unsere Anleitungen in Bereiche Unterteilt"
+    description="Wählen Sie eine Kategorie aus, um detaillierte Anleitungen und Hilfestellungen zu erhalten."
+  >
     <CategoryCard
       href={mitgliederHref}
       iconName="Users"
