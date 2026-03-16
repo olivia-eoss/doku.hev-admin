@@ -9,8 +9,8 @@ export interface Props {
 const { emailAddress, phoneNumber } = Astro.props;
 ---
 
-<section class="contact-cards container-small">
-  <div class="contact-card card-hover">
+<section class="contact-cards container-small text-link">
+  <div class="contact-card">
     <div class="contact-icon">
       <Mail size={20} />
     </div>
@@ -21,7 +21,7 @@ const { emailAddress, phoneNumber } = Astro.props;
     </div>
   </div>
 
-  <div class="contact-card card-hover">
+  <div class="contact-card">
     <div class="contact-icon">
       <Phone size={20} />
     </div>
@@ -50,6 +50,9 @@ const { emailAddress, phoneNumber } = Astro.props;
     background: var(--grey);
     border-left: 4px solid var(--green);
     border-radius: 12px;
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1);
   }
 
   .contact-icon {
@@ -73,11 +76,6 @@ const { emailAddress, phoneNumber } = Astro.props;
   .contact-content h3,
   .contact-content p {
     margin: 0;
-  }
-
-  .contact-content a {
-    color: var(--green);
-    text-decoration: none;
   }
 
   @media (max-width: 600px) {

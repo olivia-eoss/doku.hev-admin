@@ -18,7 +18,7 @@ export interface Props {
 const { title = "Downloads", description, items, id } = Astro.props;
 ---
 
-<section class="download-section">
+<section class="download-section" id={id}>
   <div class="container-small download-container">
     <div class="download-header">
       <h2>{title}</h2>
