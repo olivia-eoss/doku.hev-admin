@@ -3,6 +3,7 @@ import CustomLayout from "../layouts/CustomLayout.astro";
 import TwoColumn from "../components/TwoColumn.astro";
 import FAQ from "../components/FAQ.astro";
 import Team from "../components/Team.astro";
+import HeroText from "../components/HeroText.astro";
 
 import boneyImg from "../assets/team/boney.jpg";
 import fabriceImg from "../assets/team/fabrice.jpg";
@@ -14,12 +15,10 @@ import valeriiaImg from "../assets/team/valeriia.jpg";
 
 <CustomLayout title="Kontakt" description="Haben Sie Fragen?">
   <div class="container-small">
-    <h1>Brauchen Sie Hilfe?</h1>
-    <p class="text-max-width">
-      Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne
-      persönlich für Sie da. Unser Support-Team steht dir bei Fragen jederzeit
-      zur Verfügung
-    </p>
+    <HeroText
+      title="Brauchen Sie Hilfe?"
+      description="Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne persönlich für Sie da. Unser Support-Team steht dir bei Fragen jederzeit zur Verfügung"
+    />
     <TwoColumn emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
   </div>
 
