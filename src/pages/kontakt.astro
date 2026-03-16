@@ -2,6 +2,14 @@
 import CustomLayout from "../layouts/CustomLayout.astro";
 import TwoColumn from "../components/TwoColumn.astro";
 import FAQ from "../components/FAQ.astro";
+import Team from "../components/Team.astro";
+
+import boneyImg from "../assets/team/boney.jpg";
+import fabriceImg from "../assets/team/fabrice.jpg";
+import martinaImg from "../assets/team/martina.jpg";
+import oliviaImg from "../assets/team/olivia.jpg";
+import simonImg from "../assets/team/simon.jpg";
+import valeriiaImg from "../assets/team/valeriia.jpg";
 ---
 
 <CustomLayout title="Kontakt" description="Haben Sie Fragen?">
@@ -42,6 +50,17 @@ import FAQ from "../components/FAQ.astro";
         antwort:
           "Mutationen können von ende bis anfangs Jahr nicht gemacht werden, wir senden Ihnen vorher ein Informationsmail mit den genauen Angaben.",
       },
+    ]}
+  />
+
+  <Team
+    members={[
+      { name: "Boney", image: boneyImg.src },
+      { name: "Fabrice", image: fabriceImg.src },
+      { name: "Martina", image: martinaImg.src },
+      { name: "Olivia", image: oliviaImg.src },
+      { name: "Simon", image: simonImg.src },
+      { name: "Valeriia", image: valeriiaImg.src },
     ]}
   />
 </CustomLayout>

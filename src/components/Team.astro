@@ -1,0 +1,82 @@
+---
+export interface TeamMember {
+  name: string;
+  image: string;
+  alt?: string;
+}
+
+export interface Props {
+  members: TeamMember[];
+}
+
+const { members } = Astro.props;
+---
+
+<section class="team-section">
+  <div class="container-content">
+    <div class="team-header">
+      <h2>Unser Team</h2>
+      <p>Ihre Ansprechpartner rund um metasfresh</p>
+    </div>
+
+    <div class="team-grid">
+      {
+        members.map((member) => (
+          <div class="team-member">
+            <div class="team-avatar">
+              <img src={member.image} alt={member.alt ?? member.name} />
+            </div>
+            <p class="team-name">{member.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .team-section {
+    padding-block: var(--spacing-xxl);
+  }
+
+  .team-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .team-header h2 {
+    margin-bottom: var(--spacing-xxs);
+  }
+
+  .team-header p {
+    margin: 0;
+  }
+
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+  }
+
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+  }
+
+  .team-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--grey);
+  }
+
+  .team-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
