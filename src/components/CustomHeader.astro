@@ -40,10 +40,10 @@ import { Menu } from "lucide-astro";
   .header {
     position: sticky;
     top: 0;
-    z-index: 100;
-    background: var(--white);
-    border-bottom: 1px solid var(--grey);
+    z-index: 10000;
+    width: 100%;
     height: 64px;
+    background: var(--white);
   }
 
   .header__inner {
@@ -81,7 +81,6 @@ import { Menu } from "lucide-astro";
       margin-left: auto;
     }
 
-    /* Nur das Search-Icon zeigen, Input ausblenden */
     :global(.sl-search-input) {
       display: none;
     }
