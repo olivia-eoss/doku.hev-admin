@@ -25,7 +25,7 @@ const { title, description, items = [] } = Astro.props;
     <div class="process-grid">
       {
         items.map((item) => (
-          <a href={item.href ?? "#"} class="process-card">
+          <a href={item.href ?? "#"} class="process-card card-hover">
             <span class="process-number">{item.number}</span>
             <h3 class="process-title">{item.title}</h3>
             <p class="process-text">{item.description}</p>
@@ -57,8 +57,6 @@ const { title, description, items = [] } = Astro.props;
   }
 
   .process-header p {
-    color: var(--black);
-    opacity: 0.7;
     margin: 0 auto;
     line-height: 1.5;
   }
@@ -79,17 +77,6 @@ const { title, description, items = [] } = Astro.props;
     box-shadow:
       0 20px 25px -5px rgba(0, 0, 0, 0.08),
       0 8px 10px -6px rgba(0, 0, 0, 0.08);
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .process-card:hover {
-    transform: translateY(-3px);
-    box-shadow:
-      0 24px 30px -5px rgba(0, 0, 0, 0.13),
-      0 10px 14px -6px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
   }
 
   .process-number {
@@ -97,7 +84,6 @@ const { title, description, items = [] } = Astro.props;
     font-size: 14px;
     font-weight: 600;
     color: var(--white);
-    opacity: 0.7;
     margin-bottom: var(--spacing-xs);
     letter-spacing: 0.05em;
   }
@@ -112,7 +98,6 @@ const { title, description, items = [] } = Astro.props;
     margin: 0;
     font-size: 14px;
     color: var(--white);
-    opacity: 0.85;
     line-height: 1.5;
   }
 

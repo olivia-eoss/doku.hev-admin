@@ -53,6 +53,22 @@ margin: 0 auto;
 }
 
 
+.card-hover {
+      box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.08),
+    0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
 #starlight__sidebar {
   padding-inline-start: var(--page-margin) !important;
 }

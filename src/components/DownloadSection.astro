@@ -30,7 +30,7 @@ const { title = "Downloads", description, items, id } = Astro.props;
         items.map((item) => (
           <a
             href={item.href}
-            class="download-card"
+            class="download-card card-hover"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -78,9 +78,6 @@ const { title = "Downloads", description, items, id } = Astro.props;
 
   .download-header p {
     margin: 0 auto;
-    color: var(--black);
-    opacity: 0.7;
-    line-height: 1.5;
     max-width: 480px;
   }
 
@@ -97,17 +94,6 @@ const { title = "Downloads", description, items, id } = Astro.props;
     padding: var(--spacing-sm);
     background: var(--grey);
     border-radius: 16px;
-    text-decoration: none;
-    transition:
-      box-shadow 0.2s ease,
-      transform 0.2s ease;
-  }
-
-  .download-card:hover {
-    transform: translateY(-2px);
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.08),
-      0 8px 10px -6px rgba(0, 0, 0, 0.08);
     text-decoration: none;
   }
 
@@ -159,7 +145,6 @@ const { title = "Downloads", description, items, id } = Astro.props;
     margin: 0;
     font-size: 14px;
     color: var(--black);
-    opacity: 0.7;
     line-height: 1.4;
   }
 

@@ -1,6 +1,7 @@
 ---
 import kontaktImg from "../assets/Kontakt.png";
 import { Image } from "astro:assets";
+import Button from "./Button.astro";
 
 export interface Props {
   title: string;
@@ -20,7 +21,7 @@ const { title, description, buttonLabel, buttonHref } = Astro.props;
   <div class="support-content">
     <h2>{title}</h2>
     <p>{description}</p>
-    <a href={buttonHref} class="support-btn">{buttonLabel}</a>
+    <Button label="Zum Support" href="/kontakt" />
   </div>
 </div>
 
@@ -48,6 +49,7 @@ const { title, description, buttonLabel, buttonHref } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
+    align-items: flex-start;
   }
 
   .support-content h2 {
@@ -57,29 +59,7 @@ const { title, description, buttonLabel, buttonHref } = Astro.props;
 
   .support-content p {
     margin: 0;
-    opacity: 0.75;
-    line-height: 1.6;
     max-width: 420px;
-  }
-
-  .support-btn {
-    display: inline-flex;
-    align-items: center;
-    height: 44px;
-    padding-inline: var(--spacing-md);
-    background: var(--green);
-    color: var(--white);
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: var(--font-size-body);
-    font-weight: 600;
-    width: fit-content;
-    transition: background 200ms ease;
-  }
-
-  .support-btn:hover {
-    background: color-mix(in srgb, var(--green) 85%, black);
-    text-decoration: none;
   }
 
   @media (max-width: 768px) {

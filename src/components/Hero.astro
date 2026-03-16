@@ -47,7 +47,7 @@ import { BookOpen, Video, Headphones, CircleCheckBig } from "lucide-astro";
       </div>
 
       <div class="hero-right">
-        <a href="/anleitungen" class="card card-primary">
+        <a href="/anleitungen" class="card card-primary card-hover">
           <BookOpen class="card-icon" size={40} />
           <div class="card-content">
             <h3>Anleitungen</h3>
@@ -55,7 +55,7 @@ import { BookOpen, Video, Headphones, CircleCheckBig } from "lucide-astro";
           </div>
         </a>
 
-        <a href="/videos" class="card card-secondary">
+        <a href="/videos" class="card card-secondary card-hover">
           <Video class="card-icon" size={40} />
           <div class="card-content">
             <h3>Support</h3>
@@ -63,7 +63,7 @@ import { BookOpen, Video, Headphones, CircleCheckBig } from "lucide-astro";
           </div>
         </a>
 
-        <a href="/kontakt" class="card card-tertiary card-wide">
+        <a href="/kontakt" class="card card-tertiary card-wide card-hover">
           <Headphones class="card-icon" size={40} />
           <div class="card-content">
             <h3>Neuer metasfresh Nutzer anfragen</h3>
@@ -185,18 +185,6 @@ import { BookOpen, Video, Headphones, CircleCheckBig } from "lucide-astro";
     padding: var(--spacing-sm);
     border-radius: 16px;
     text-decoration: none;
-    box-shadow:
-      0 20px 25px -5px rgba(0, 0, 0, 0.1),
-      0 8px 10px -6px rgba(0, 0, 0, 0.1);
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    text-decoration: none;
   }
 
   .card-content {
@@ -211,7 +199,6 @@ import { BookOpen, Video, Headphones, CircleCheckBig } from "lucide-astro";
 
   .card p {
     margin: 0;
-    opacity: 0.9;
   }
 
   .card-primary {

@@ -10,7 +10,7 @@ const { emailAddress, phoneNumber } = Astro.props;
 ---
 
 <section class="contact-cards container-small">
-  <div class="contact-card">
+  <div class="contact-card card-hover">
     <div class="contact-icon">
       <Mail size={20} />
     </div>
@@ -21,7 +21,7 @@ const { emailAddress, phoneNumber } = Astro.props;
     </div>
   </div>
 
-  <div class="contact-card">
+  <div class="contact-card card-hover">
     <div class="contact-icon">
       <Phone size={20} />
     </div>
@@ -78,10 +78,6 @@ const { emailAddress, phoneNumber } = Astro.props;
   .contact-content a {
     color: var(--green);
     text-decoration: none;
-  }
-
-  .contact-content a:hover {
-    text-decoration: underline;
   }
 
   @media (max-width: 600px) {
