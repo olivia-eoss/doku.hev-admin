@@ -1,0 +1,115 @@
+---
+import { ChevronDown } from "lucide-astro";
+
+export interface FaqItem {
+  frage: string;
+  antwort: string;
+}
+
+export interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="faq-section">
+  <div class="container-small">
+    <div class="faq-header">
+      <h2>Häufig gestellte Fragen</h2>
+      <p>
+        Finden Sie schnelle Antworten auf die häufigsten Fragen zu metasfresh.
+      </p>
+    </div>
+
+    <div class="faq-list">
+      {
+        items.map((item) => (
+          <details class="faq-item">
+            <summary class="faq-question">
+              <b>{item.frage}</b>
+              <span class="faq-icon">
+                <ChevronDown size={16} />
+              </span>
+            </summary>
+            <div class="faq-answer">
+              <p set:html={item.antwort} />
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-section {
+    padding-bottom: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+  }
+
+  .faq-header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .faq-header h2 {
+    margin-bottom: var(--spacing-xxs);
+  }
+
+  .faq-header p {
+    margin: 0;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--grey);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--grey);
+    padding: var(--spacing-sm);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+    color: var(--black);
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+  }
+
+  .faq-question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-icon {
+    color: var(--black);
+    opacity: 0.5;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  details[open] .faq-icon {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    padding-top: var(--spacing-xs);
+    color: var(--black);
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>

@@ -1,17 +1,53 @@
 ---
 import CustomLayout from "../layouts/CustomLayout.astro";
 import TwoColumn from "../components/TwoColumn.astro";
+import FAQ from "../components/FAQ.astro";
 ---
 
 <CustomLayout title="Kontakt" description="Haben Sie Fragen?">
   <div class="container-small">
     <h1>Brauchen Sie Hilfe?</h1>
-    <p>
+    <p class="text-max-width">
       Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne
       persönlich für Sie da. Unser Support-Team steht dir bei Fragen jederzeit
       zur Verfügung
     </p>
+    <TwoColumn emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
   </div>
 
-  <TwoColumn emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
+  <FAQ
+    items={[
+      {
+        frage: "Bieten Sie Schulungen für metasfresh an?",
+        antwort:
+          "Ja, wir bieten Schulungen an. Schreiben Sie uns ein Mail auf <a href='mailto:support@eoss.ch'>support@eoss.ch</a> um die möglichkeiten einer Schulung und das Datum genauer zu besprechen.",
+      },
+      {
+        frage: "Wo erhalte ich Informationsmails?",
+        antwort:
+          "Informationsmails werden an die registrierte E-Mail-Adresse gesendet, welche auch genutzt wird um sich in metasfresh ein zu loggen.",
+      },
+      {
+        frage: "Was machen wenn ich mein Passwort vergessen habe?",
+        antwort:
+          "Klicken Sie auf der Login-Seite auf «Passwort vergessen». Lieber auf Passwort vergessen klicken, anstatt verschiedene Passwörter zu versuchen bis es Blockiert wird.",
+      },
+      {
+        frage: "Wie bekomme ich einen neues Nutzer für metasfresh?",
+        antwort:
+          "Laden Sie sich dieses <a href='#download'>Formular</a> herunter.",
+      },
+      {
+        frage: "Wann kann ich keine Mutationen machen?",
+        antwort:
+          "Mutationen können von ende bis anfangs Jahr nicht gemacht werden, wir senden Ihnen vorher ein Informationsmail mit den genauen Angaben.",
+      },
+    ]}
+  />
 </CustomLayout>
+
+<style>
+  .text-max-width {
+    max-width: 600px;
+  }
+</style>
