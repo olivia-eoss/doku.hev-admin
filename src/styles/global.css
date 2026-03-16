@@ -17,7 +17,7 @@
     --content-width: 1504px;
     --small-width: 1900px;
 
-      --sl-nav-height: 64px !important;
+    --sl-sidebar-width: 360px;
 
 }
 
@@ -53,6 +53,38 @@ margin: 0 auto;
 }
 
 
+#starlight__sidebar {
+  padding-inline-start: var(--page-margin) !important;
+}
+
+.main-frame {
+  padding-inline-end: var(--page-margin) !important;
+}
+
+.page.sl-flex {
+  max-width: calc(var(--content-width) + (var(--page-margin) * 2));
+  margin-inline: auto;
+}
+
+header:where(.astro-vrdttmbt) {
+  padding: 0 !important;
+  padding-inline: 0 !important;
+}
+
+[data-has-sidebar] header:where(.astro-vrdttmbt) {
+  padding-inline-end: 0 !important;
+}
+
+.sidebar-content {
+  padding-inline-start: 0 !important;
+  padding-inline-end: var(--page-margin) !important;
+}
+
+.sidebar-content a:hover {
+  background: var(--light-green) !important;
+  border-radius: 6px;
+  opacity: 0.5;
+}
 
 
 .page > header > header {

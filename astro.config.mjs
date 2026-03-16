@@ -13,6 +13,14 @@ export default defineConfig({
     			dark: './src/assets/Logo-dark.svg',
 				replacesTitle: true,
 			},
+			tableOfContents: false,
+			defaultLocale: 'de',
+			locales: {
+				root: {
+				label: 'Deutsch',
+				lang: 'de',
+				}
+			},
 			customCss: [
         		'./src/styles/global.css',
       		],
