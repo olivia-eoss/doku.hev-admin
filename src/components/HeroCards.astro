@@ -27,6 +27,9 @@ const {
 ---
 
 <div class="hero-right">
+  <div class="circle circle-top-right"></div>
+  <div class="circle circle-left"></div>
+
   <a href={card1Href} class="card card-primary card-hover">
     <BookOpen class="card-icon" size={40} />
     <div class="card-content">
@@ -54,6 +57,7 @@ const {
 
 <style>
   .hero-right {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 180px auto;
@@ -61,7 +65,36 @@ const {
     padding-top: var(--spacing-md);
   }
 
+  /* Dekorative Kreise */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .circle-top-right {
+    width: 80px;
+    height: 80px;
+    background: var(--green);
+    top: 0;
+    right: -16px;
+    opacity: 0.5;
+  }
+
+  .circle-left {
+    width: 60px;
+    height: 60px;
+    background: var(--light-green);
+    top: 99%;
+    left: -24px;
+    transform: translateY(-50%);
+    opacity: 0.5;
+  }
+
   .card {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xxs);
@@ -125,6 +158,10 @@ const {
   @media (max-width: 640px) {
     .hero-right {
       grid-template-columns: 1fr;
+    }
+
+    .circle-left {
+      display: none;
     }
   }
 </style>

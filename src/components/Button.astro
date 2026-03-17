@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-astro";
 interface Props {
   label: string;
   href: string;
-  variant?: "filled" | "outline";
+  variant?: "filled";
   arrow?: boolean;
 }
 
@@ -60,19 +60,6 @@ const { label, href, variant = "filled", arrow = false } = Astro.props;
     color: var(--black);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var;
-  }
-
-  .btn--outline {
-    background: transparent;
-    color: var(--green);
-  }
-
-  .btn--outline:hover {
-    background: var(--light-green);
-    border-color: var(--light-green);
-    color: var(--black);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(46, 133, 85, 0.2);
   }
 
   .btn:active {
