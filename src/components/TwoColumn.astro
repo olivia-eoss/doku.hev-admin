@@ -7,30 +7,40 @@ export interface Props {
 }
 
 const { emailAddress, phoneNumber } = Astro.props;
+
+const contacts = [
+  {
+    icon: Mail,
+    title: "E-Mail Support",
+    description: "Antwort in der Regel innerhalb von 1–2 Werktagen",
+    href: `mailto:${emailAddress}`,
+    label: emailAddress,
+  },
+  {
+    icon: Phone,
+    title: "Telefon Support",
+    description: "Mo–Fr, 08:00–17:00 Uhr",
+    href: `tel:${phoneNumber.replace(/\s/g, "")}`,
+    label: phoneNumber,
+  },
+];
 ---
 
 <section class="contact-cards container-small text-link">
-  <div class="contact-card card-hover">
-    <div class="contact-icon">
-      <Mail size={20} />
-    </div>
-    <div class="contact-content">
-      <h3>E-Mail Support</h3>
-      <p>Antwort in der Regel innerhalb von 1–2 Werktagen</p>
-      <a href={`mailto:${emailAddress}`}>{emailAddress}</a>
-    </div>
-  </div>
-
-  <div class="contact-card card-hover">
-    <div class="contact-icon">
-      <Phone size={20} />
-    </div>
-    <div class="contact-content">
-      <h3>Telefon Support</h3>
-      <p>Mo–Fr, 08:00–17:00 Uhr</p>
-      <a href={`tel:${phoneNumber.replace(/\s/g, "")}`}>{phoneNumber}</a>
-    </div>
-  </div>
+  {
+    contacts.map(({ icon: Icon, title, description, href, label }) => (
+      <div class="contact-card card-hover">
+        <div class="contact-icon">
+          <Icon size={20} />
+        </div>
+        <div class="contact-content">
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <a href={href}>{label}</a>
+        </div>
+      </div>
+    ))
+  }
 </section>
 
 <style>

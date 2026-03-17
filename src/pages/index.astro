@@ -46,15 +46,30 @@ const berichteHref = await getFirstDocHref("berichte");
 
       <div class="hero-animate hero-animate-3">
         <HeroCards
-          card1Title="Anleitungen"
-          card1Description="Alle Anleitungen auf einen Blick."
-          card1Href="/mitglieder/neuaufnahme/1-standard-neuaufnahmen/"
-          card2Title="Support"
-          card2Description="Wir helfen gerne weiter."
-          card2Href="/kontakt"
-          card3Title="Neuer metasfresh Nutzer anfragen"
-          card3Description="Laden Sie sich das Formular herunter."
-          card3Href="/#download"
+          cards={[
+            {
+              title: "Anleitungen",
+              description: "Alle Anleitungen auf einen Blick.",
+              href: "/mitglieder/neuaufnahme/1-standard-neuaufnahmen/",
+              icon: "book",
+              variant: "primary",
+            },
+            {
+              title: "Support",
+              description: "Wir helfen gerne weiter.",
+              href: "/kontakt",
+              icon: "video",
+              variant: "secondary",
+            },
+            {
+              title: "Neuer metasfresh Nutzer anfragen",
+              description: "Laden Sie sich das Formular herunter.",
+              href: "/#download",
+              icon: "headphones",
+              variant: "tertiary",
+              wide: true,
+            },
+          ]}
         />
       </div>
     </div>

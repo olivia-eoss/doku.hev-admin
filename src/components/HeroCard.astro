@@ -1,0 +1,92 @@
+---
+import { BookOpen, Video, Headphones } from "lucide-astro";
+
+type IconName = "book" | "video" | "headphones";
+
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  icon: IconName;
+  variant: "primary" | "secondary" | "tertiary";
+  wide?: boolean;
+}
+
+const { title, description, href, icon, variant, wide = false } = Astro.props;
+
+const icons = { book: BookOpen, video: Video, headphones: Headphones };
+const Icon = icons[icon];
+---
+
+<a href={href} class={`card card-${variant} ${wide ? "card-wide" : ""}`}>
+  <Icon class="card-icon" size={40} />
+  <div class="card-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</a>
+
+<style>
+  .card {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    padding: var(--spacing-sm);
+    border-radius: var(--spacing-xs);
+    text-decoration: none;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxs);
+  }
+
+  .card h3 {
+    margin: 0;
+  }
+  .card p {
+    margin: 0;
+  }
+
+  .card-primary {
+    background: var(--green);
+    color: var(--white);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: stretch;
+    justify-content: center;
+  }
+
+  .card-primary .card-icon {
+    color: var(--white);
+  }
+
+  .card-secondary {
+    background: var(--light-green);
+    color: var(--black);
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .card-secondary .card-icon {
+    color: var(--black);
+  }
+
+  .card-tertiary {
+    background: var(--grey);
+    color: var(--black);
+  }
+
+  .card-tertiary .card-icon {
+    color: var(--black);
+  }
+
+  .card-wide {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+</style>

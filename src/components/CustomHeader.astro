@@ -1,5 +1,6 @@
 ---
 import Logo from "../assets/Logo.svg";
+import LogoDark from "../assets/Logo-dark.svg";
 import Search from "@astrojs/starlight/components/Search.astro";
 import Button from "../components/Button.astro";
 import Nav from "./Nav.astro";
@@ -9,7 +10,8 @@ import { Menu, Sun, Moon } from "lucide-astro";
 <header class="header sl-header">
   <div class="container-full header__inner">
     <a href="/" class="header__logo">
-      <Logo />
+      <span class="logo-light"><Logo /></span>
+      <span class="logo-dark"><LogoDark /></span>
     </a>
     <Nav />
     <div class="sl-search">
@@ -115,6 +117,17 @@ import { Menu, Sun, Moon } from "lucide-astro";
 
   .theme-toggle:hover {
     background: var(--grey);
+  }
+
+  .logo-dark {
+    display: none;
+  }
+
+  :global([data-theme="dark"]) .logo-light {
+    display: none;
+  }
+  :global([data-theme="dark"]) .logo-dark {
+    display: block;
   }
 
   @media (max-width: 1140px) {
