@@ -34,7 +34,7 @@ export default defineConfig({
 				{
 					label: 'Mitglieder',
 					collapsed: true,
-					autogenerate: { directory: 'mitglieder',  collapsed: true, },
+					autogenerate: { directory: 'mitglieder',  collapsed: true },
 	
 				},
 				{

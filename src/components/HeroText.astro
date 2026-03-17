@@ -7,9 +7,17 @@ export interface Props {
   description: string;
   buttonLabel?: string;
   buttonHref?: string;
+  arrow?: boolean;
 }
 
-const { title, highlight, description, buttonLabel, buttonHref } = Astro.props;
+const {
+  title,
+  highlight,
+  description,
+  buttonLabel,
+  buttonHref,
+  arrow = false,
+} = Astro.props;
 ---
 
 <div class="hero-text">
@@ -21,7 +29,7 @@ const { title, highlight, description, buttonLabel, buttonHref } = Astro.props;
   <p>{description}</p>
   {
     buttonLabel && buttonHref && (
-      <Button label={buttonLabel} href={buttonHref} />
+      <Button label={buttonLabel} href={buttonHref} arrow={arrow} />
     )
   }
 </div>
