@@ -1,0 +1,100 @@
+---
+import CustomLayout from "../layouts/CustomLayout.astro";
+---
+
+<CustomLayout
+  title="Datenschutz"
+  description="Datenschutzerklärung der HEV Dokumentation"
+>
+  <div class="legal-page text-link">
+    <h1>Datenschutzerklärung</h1>
+
+    <section>
+      <h2>Allgemeines</h2>
+      <p>
+        Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen.
+        Diese Datenschutzerklärung informiert Sie darüber, welche Daten bei der
+        Nutzung dieser Dokumentationsplattform erhoben werden und wie diese
+        verwendet werden.
+      </p>
+    </section>
+
+    <section>
+      <h2>Verantwortliche Stelle</h2>
+      <p>
+        eoss INFORMATIK AG<br />
+        Burgerrietstrasse 13<br />
+        8730 Uznach<br />
+        E-Mail: <a href="mailto:support@eoss.ch">support@eoss.ch</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Erhebung und Verarbeitung von Daten</h2>
+      <p>
+        Diese Dokumentationsplattform ist eine statisch generierte Website. Es
+        werden keine personenbezogenen Daten aktiv erhoben oder gespeichert. Es
+        gibt keine Benutzerkonten, keine Kontaktformulare und keine
+        Tracking-Tools.
+      </p>
+      <p>
+        Beim Aufruf der Seite können durch den Hosting-Anbieter technische
+        Zugriffsdaten (z.B. IP-Adresse, Zeitstempel) in Server-Logs gespeichert
+        werden. Diese Daten dienen ausschliesslich der technischen
+        Betriebssicherheit.
+      </p>
+    </section>
+
+    <section>
+      <h2>Hosting</h2>
+      <p>
+        Diese Plattform wird über Vercel gehostet. Vercel kann im Rahmen des
+        Betriebs technische Daten verarbeiten. Weitere Informationen finden Sie
+        in der Datenschutzerklärung von Vercel unter <a
+          href="https://vercel.com/legal/privacy-policy"
+          target="_blank"
+          rel="noopener">vercel.com/legal/privacy-policy</a
+        >.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ihre Rechte</h2>
+      <p>
+        Sie haben das Recht auf Auskunft, Berichtigung, Löschung und
+        Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Da diese
+        Plattform keine personenbezogenen Daten erhebt, entfällt in der Regel
+        eine konkrete Auskunftspflicht. Bei Fragen wenden Sie sich an <a
+          href="mailto:support@eoss.ch">support@eoss.ch</a
+        >.
+      </p>
+    </section>
+
+    <section>
+      <h2>Änderungen</h2>
+      <p>
+        Diese Datenschutzerklärung kann bei Bedarf angepasst werden. Die jeweils
+        aktuelle Version ist auf dieser Seite einsehbar.
+      </p>
+    </section>
+  </div>
+</CustomLayout>
+
+<style>
+  .legal-page {
+    padding-block: var(--spacing-xxl);
+    max-width: 720px;
+  }
+
+  .legal-page h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  section h2 {
+    margin-bottom: var(--spacing-xs);
+  }
+</style>

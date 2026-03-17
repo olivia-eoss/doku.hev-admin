@@ -1,0 +1,72 @@
+---
+import CustomLayout from "../layouts/CustomLayout.astro";
+---
+
+<CustomLayout title="Impressum" description="Impressum der HEV Dokumentation">
+  <div class="legal-page text-link">
+    <h1>Impressum</h1>
+
+    <section>
+      <h2>Betreiber der Webseite</h2>
+      <p>
+        eoss INFORMATIK AG<br />
+        Burgerrietstrasse 13<br />
+        8730 Uznach<br />
+        Schweiz
+      </p>
+      <p>
+        Telefon: +41 31 000 00 00<br />
+        E-Mail: <a href="mailto:support@eoss.ch">support@eoss.ch</a><br />
+        Website: <a href="https://www.eoss.ch" target="_blank" rel="noopener"
+          >www.eoss.ch</a
+        >
+      </p>
+    </section>
+
+    <section>
+      <h2>Vertreten durch den Geschäftsführer</h2>
+      <p>
+        Simon Herensperger<br />
+        <p>Handelsregister</p>
+        <ul>
+          <li>Handelsregister-Nr.: CH-320.3.050.699-7</li>
+          <li>Rechtsform: Aktiengesellschaft</li>
+          <li>Mehrwertsteuernummer: CHE-109.343.814 MWST</li>
+        </ul>
+      </p>
+    </section>
+
+    <section>
+      <h2>Technische Umsetzung</h2>
+      <p>
+        Diese Dokumentationsplattform wurde im Rahmen einer
+        Individualarbeitsbeurteilung (IPA) der Ausbildung Mediamatik EFZ
+        umgesetzt.
+      </p>
+    </section>
+  </div>
+</CustomLayout>
+
+<style>
+  .legal-page {
+    padding-block: var(--spacing-xxl);
+    max-width: 720px;
+  }
+
+  .legal-page h1 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  section {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  section h2 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  section p {
+    color: var(--black);
+    line-height: 1.7;
+  }
+</style>
