@@ -67,6 +67,13 @@ import { Menu, Sun, Moon } from "lucide-astro";
     const current = document.documentElement.dataset.theme;
     applyTheme(current === "dark" ? "light" : "dark");
   });
+
+  const menuBtn = document.getElementById("menuBtn");
+  const mainNav = document.getElementById("mainNav");
+
+  menuBtn?.addEventListener("click", () => {
+    mainNav?.classList.toggle("is-open");
+  });
 </script>
 
 <style>
@@ -130,22 +137,20 @@ import { Menu, Sun, Moon } from "lucide-astro";
     display: block;
   }
 
-  @media (max-width: 1140px) {
+  @media (max-width: 1000px) {
     .header__cta-wrap {
       display: none;
     }
-  }
-
-  @media (max-width: 768px) {
     .header__menu-btn {
       display: flex;
       margin-left: auto;
     }
+  }
 
+  @media (max-width: 768px) {
     :global(.sl-search-input) {
       display: none;
     }
-
     :global(.sl-search) {
       min-width: unset;
       width: auto;

@@ -28,8 +28,10 @@ const navItems = await Promise.all(
 <style>
   .nav {
     display: flex;
-    gap: var(--spacing-xxs);
+    gap: clamp(4px, 1vw, var(--spacing-xxs));
     margin-inline: auto;
+    flex: 1;
+    justify-content: center;
   }
 
   .nav__link {
@@ -52,7 +54,7 @@ const navItems = await Promise.all(
     background: color-mix(in srgb, var(--light-green) 60%, transparent);
   }
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1480px) {
     .nav {
       gap: var(--spacing-xxxs);
     }
@@ -61,7 +63,16 @@ const navItems = await Promise.all(
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1200px) {
+    .nav__link {
+      background: transparent;
+    }
+    .nav__link:hover {
+      background: color-mix(in srgb, var(--light-green) 30%, transparent);
+    }
+  }
+
+  @media (max-width: 1000px) {
     .nav {
       display: none;
       position: absolute;
@@ -81,6 +92,7 @@ const navItems = await Promise.all(
     }
     .nav__link {
       padding-inline: var(--spacing-md);
+      background: color-mix(in srgb, var(--light-green) 30%, transparent);
     }
   }
 </style>

@@ -16,6 +16,7 @@
     --page-margin: var(--spacing-xxl);
     --content-width: 1504px;
     --small-width: 1900px;
+      --page-margin-mobile: var(--spacing-xs);
 
     --sl-sidebar-width: 360px;
 
@@ -43,6 +44,14 @@
 .container-small {
   max-width: 900px;
 margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container-content,
+  .container-full,
+  .container-small {
+    padding-inline: var(--page-margin-mobile);
+  }
 }
 
 .main-content {
