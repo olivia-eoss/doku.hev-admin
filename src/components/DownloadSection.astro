@@ -93,7 +93,7 @@ const { title = "Downloads", description, items, id } = Astro.props;
     gap: var(--spacing-xs);
     padding: var(--spacing-sm);
     background: var(--grey);
-    border-radius: 16px;
+    border-radius: var(--spacing-xs);
     text-decoration: none;
   }
 
@@ -110,13 +110,12 @@ const { title = "Downloads", description, items, id } = Astro.props;
     width: 36px;
     height: 36px;
     background: var(--white);
-    border-radius: 8px;
+    border-radius: var(--spacing-xxs);
     color: var(--green);
   }
 
   .download-card__badge {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: var(--font-size-p);
     color: var(--black);
     opacity: 0.5;
     letter-spacing: 0.05em;
@@ -143,9 +142,7 @@ const { title = "Downloads", description, items, id } = Astro.props;
 
   .download-card__desc {
     margin: 0;
-    font-size: 14px;
     color: var(--black);
-    line-height: 1.4;
   }
 
   .download-card__dl-icon {

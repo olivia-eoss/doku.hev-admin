@@ -57,7 +57,7 @@ const DecorationIcon = decorationIconName
   .category-card {
     position: relative;
     display: flex;
-    border-radius: 16px;
+    border-radius: var(--spacing-xs);
     text-decoration: none;
     overflow: hidden;
   }
@@ -158,8 +158,8 @@ const DecorationIcon = decorationIconName
   }
 
   .size-small .icon-container :global(.main-icon) {
-    width: 96px;
-    height: 96px;
+    width: var(--spacing-xxxl);
+    height: var(--spacing-xxxl);
   }
 
   .decoration-icon {
@@ -175,8 +175,6 @@ const DecorationIcon = decorationIconName
 
   .card-content p {
     margin: 0;
-    font-size: 14px;
-    line-height: 1.4;
   }
 
   @media (max-width: 900px) {
@@ -204,8 +202,8 @@ const DecorationIcon = decorationIconName
 
     .size-normal .icon-container :global(.main-icon),
     .size-small .icon-container :global(.main-icon) {
-      width: 96px;
-      height: 96px;
+      width: var(--spacing-xxxl);
+      height: var(--spacing-xxxl);
     }
 
     .variant-green .icon-container {

@@ -11,14 +11,14 @@
   --font-body: "Poppins", sans-serif;
   --font-heading: "Space Grotesk", sans-serif;
 
-  --font-size-h1: 64px;
-  --font-size-h2: 40px;
-  --font-size-h3: 24px;
+  --font-size-h1: var(--spacing-xxl);
+  --font-size-h2: var(--spacing-lg);
+  --font-size-h3: var(--spacing-sm);
   --font-size-h4: 18px;
-  --font-size-body: 16px;
+  --font-size-body: var(--spacing-xs);
 
-  --font-size-h1-mobile: 32px;
-  --font-size-h2-mobile: 24px;
+  --font-size-h1-mobile: var(--spacing-md);
+  --font-size-h2-mobile: var(--spacing-sm);
   --font-size-h3-mobile: 18px;
   --font-size-h4-mobile: 14px;
   --font-size-body-mobile: 14px;

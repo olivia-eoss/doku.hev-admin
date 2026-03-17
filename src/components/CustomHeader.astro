@@ -34,15 +34,16 @@ import { Menu, Sun, Moon } from "lucide-astro";
     </button>
   </div>
 </header>
-
 <script>
+  import { THEME_KEY } from "../utils/themeKey.ts";
+
   const toggle = document.getElementById("themeToggle");
   const sun = document.getElementById("iconSun");
   const moon = document.getElementById("iconMoon");
 
   function getTheme() {
     return (
-      localStorage.getItem("starlight-theme") ||
+      localStorage.getItem(THEME_KEY) ||
       (window.matchMedia("(prefers-color-scheme: dark)").matches
         ? "dark"
         : "light")
@@ -51,7 +52,7 @@ import { Menu, Sun, Moon } from "lucide-astro";
 
   function applyTheme(theme: string) {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem("starlight-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
     if (sun && moon) {
       sun.style.display = theme === "dark" ? "none" : "block";
       moon.style.display = theme === "dark" ? "block" : "none";
@@ -72,7 +73,7 @@ import { Menu, Sun, Moon } from "lucide-astro";
     top: 0;
     z-index: 10000;
     width: 100%;
-    height: 64px;
+    height: var(--spacing-xxl);
     background: var(--white);
   }
 

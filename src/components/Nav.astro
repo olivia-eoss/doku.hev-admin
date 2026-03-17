@@ -39,9 +39,9 @@ const navItems = await Promise.all(
     font-size: var(--font-size-body);
     color: var(--black);
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--spacing-xxs);
     background: color-mix(in srgb, var(--light-green) 30%, transparent);
-    height: 40px;
+    height: var(--spacing-lg);
     padding-inline: var(--spacing-md);
     transition: background 200ms ease;
     white-space: nowrap;
@@ -65,7 +65,7 @@ const navItems = await Promise.all(
     .nav {
       display: none;
       position: absolute;
-      top: 64px;
+      top: var(--spacing-xxl);
       left: 0;
       right: 0;
       background: var(--white);
