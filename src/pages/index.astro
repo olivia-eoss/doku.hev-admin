@@ -5,7 +5,7 @@ import FeatureList from "../components/FeatureList.astro";
 import HeroCards from "../components/HeroCards.astro";
 import CategoryGrid from "../components/CategoryGrid.astro";
 import CategoryCard from "../components/CategoryCard.astro";
-import TreeColumn from "../components/TreeColumn.astro";
+import ThreeColumn from "../components/ThreeColumn.astro";
 import Support from "../components/Support.astro";
 import DownloadSection from "../components/DownloadSection.astro";
 
@@ -26,9 +26,9 @@ const berichteHref = await getFirstDocHref("berichte");
             highlight="METASFRESH"
             title="einfach erklärt"
             description="Ihre zentrale Anlaufstelle für die Nutzung des metasfresh Mitgliederverwaltungssystems. Hier finden Sie verständliche Anleitungen, hilfreiche Tipps und weiterführende Informationen – von den Grundlagen bis zu fortgeschrittenen Funktionen."
-            buttonLabel="Zum metasfresh Login"
+            buttonLabel="Zum metasfresh-Login"
             buttonHref="https://hev.metasfresh.com/login"
-            arrow
+            external={true}
           />
         </div>
 
@@ -62,7 +62,7 @@ const berichteHref = await getFirstDocHref("berichte");
               variant: "secondary",
             },
             {
-              title: "Neuer metasfresh Nutzer anfragen",
+              title: "Neuen metasfresh-Benutzer anfordern",
               description: "Laden Sie sich das Formular herunter.",
               href: "/#download",
               icon: "headphones",
@@ -76,7 +76,7 @@ const berichteHref = await getFirstDocHref("berichte");
   </section>
 
   <CategoryGrid
-    title="Unsere Anleitungen in Bereiche Unterteilt"
+    title="Unsere Anleitungen in Bereiche unterteilt"
     description="Wählen Sie eine Kategorie aus, um detaillierte Anleitungen und Hilfestellungen zu erhalten."
   >
     <CategoryCard
@@ -93,15 +93,15 @@ const berichteHref = await getFirstDocHref("berichte");
       variant="light-green"
       size="small"
       title="Zahlungen"
-      description="Zahlungen verbuchen und ESR Importe"
+      description="Zahlungen verbuchen und ESR-Importe"
     />
     <CategoryCard
       href={rechnungHref}
       iconName="CreditCard"
       variant="grey"
       size="small"
-      title="Rechnung"
-      description="Rechnungen erstellen, suchen und Mahnungen"
+      title="Rechnungen"
+      description="Rechnungen erstellen, suchen und Mahnungen verwalten."
     />
     <CategoryCard
       href={berichteHref}
@@ -113,7 +113,7 @@ const berichteHref = await getFirstDocHref("berichte");
       decorationIconName="BarChart3"
     />
   </CategoryGrid>
-  <TreeColumn
+  <ThreeColumn
     title="Meist genutzte Prozesse"
     description="Die wichtigsten Workflows für den Alltag."
     items={[
@@ -147,17 +147,17 @@ const berichteHref = await getFirstDocHref("berichte");
   <DownloadSection
     id="download"
     title="Downloads"
-    description="Um die Zugriffsberechtigung zu ändern oder neu zu erstellen müssen Sie das Formular ausfüllen und uns schicken."
+    description="Um eine Zugriffsberechtigung zu ändern oder neu zu erstellen, müssen Sie das Formular ausfüllen und uns zusenden."
     items={[
       {
         title: "metasfresh",
-        description: "Antrag Zugriff HEV metasfresh",
+        description: "Antrag auf Zugriff für HEV metasfresh",
         href: "/downloads/antrag-metasfresh.pdf",
         type: "PDF",
       },
       {
         title: "Typo 3",
-        description: "Antrag Zugriff Backend User Typo 3",
+        description: "Antrag für Backend-Benutzer Typo 3",
         href: "/downloads/antrag-typo3.pdf",
         type: "PDF",
       },
@@ -166,23 +166,6 @@ const berichteHref = await getFirstDocHref("berichte");
 </CustomLayout>
 
 <style>
-  .hero-section {
-    padding-block: var(--spacing-xl);
-  }
-
-  .hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xxl);
-    align-items: start;
-  }
-
-  .hero-left {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
   .hero-section {
     padding-block: var(--spacing-xl);
   }
@@ -241,12 +224,6 @@ const berichteHref = await getFirstDocHref("berichte");
 
     .hero-animate.is-visible {
       animation: none;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    .hero-layout {
-      grid-template-columns: 1fr;
     }
   }
 

@@ -34,7 +34,7 @@ const { title, description } = Astro.props;
 
   .support-image {
     flex-shrink: 0;
-    width: 450px;
+    width: clamp(150px, 30%, 450px) .;
   }
 
   .support-image img {
@@ -65,10 +65,6 @@ const { title, description } = Astro.props;
       flex-direction: column;
       text-align: center;
       gap: var(--spacing-md);
-    }
-
-    .support-image {
-      width: 240px;
     }
 
     .support-content {

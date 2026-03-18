@@ -5,18 +5,18 @@ interface Props {
   label: string;
   href: string;
   variant?: "filled";
-  arrow?: boolean;
+  external?: boolean;
 }
 
-const { label, href, variant = "filled", arrow = false } = Astro.props;
+const { label, href, variant = "filled", external = false } = Astro.props;
 ---
 
 <a
   href={href}
   class={`btn btn--${variant}`}
-  target={arrow ? "_blank" : "_self"}
-  rel={arrow ? "noopener noreferrer" : undefined}
-  >{label}{arrow && <ArrowUpRight size={18} />}</a
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noopener noreferrer" : undefined}
+  >{label}{external && <ArrowUpRight size={18} />}</a
 >
 
 <style>
@@ -46,24 +46,10 @@ const { label, href, variant = "filled", arrow = false } = Astro.props;
     color: var(--white);
   }
 
-  a {
-    color: var(--green);
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-    color: var(--white);
-  }
-
   .btn--filled:hover {
     filter: brightness(0.9);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     color: var(--white);
-  }
-
-  .btn:active {
-    transform: translateY(0);
   }
 </style>

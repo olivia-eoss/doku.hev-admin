@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
 export interface TeamMember {
   name: string;
-  image: string;
+  image: ImageMetadata;
   alt?: string;
 }
 
@@ -24,7 +26,12 @@ const { members } = Astro.props;
         members.map((member) => (
           <div class="team-member">
             <div class="team-avatar">
-              <img src={member.image} alt={member.alt ?? member.name} />
+              <Image
+                src={member.image}
+                alt={member.alt ?? member.name}
+                width={160}
+                height={160}
+              />
             </div>
             <p class="team-name">{member.name}</p>
           </div>

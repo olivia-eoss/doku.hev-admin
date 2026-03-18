@@ -18,7 +18,10 @@ const icons = { book: BookOpen, video: Video, headphones: Headphones };
 const Icon = icons[icon];
 ---
 
-<a href={href} class={`card card-${variant} ${wide ? "card-wide" : ""}`}>
+<a
+  href={href}
+  class={`card-hover card card-${variant} ${wide ? "card-wide" : ""}`}
+>
   <Icon class="card-icon" size={40} />
   <div class="card-content">
     <h3>{title}</h3>

@@ -1,6 +1,6 @@
 ---
 import CustomLayout from "../layouts/CustomLayout.astro";
-import TwoColumn from "../components/TwoColumn.astro";
+import ContactCard from "../components/ContactCard.astro";
 import FAQ from "../components/FAQ.astro";
 import Team from "../components/Team.astro";
 import HeroText from "../components/HeroText.astro";
@@ -17,9 +17,9 @@ import valeriiaImg from "../assets/team/valeriia.jpg";
   <div class="container-small">
     <HeroText
       title="Brauchen Sie Hilfe?"
-      description="Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne persönlich für Sie da. Unser Support-Team steht dir bei Fragen jederzeit zur Verfügung"
+      description="Fragen zu metasfresh oder zur Mitgliederverwaltung? Wir sind gerne persönlich für Sie da. Unser Support-Team steht Ihnen bei Fragen gerne jederzeit zur Verfügung"
     />
-    <TwoColumn emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
+    <ContactCard emailAddress="support@eoss.ch" phoneNumber="055 505 22 00" />
   </div>
 
   <FAQ
@@ -54,18 +54,12 @@ import valeriiaImg from "../assets/team/valeriia.jpg";
 
   <Team
     members={[
-      { name: "Boney", image: boneyImg.src },
-      { name: "Fabrice", image: fabriceImg.src },
-      { name: "Martina", image: martinaImg.src },
-      { name: "Olivia", image: oliviaImg.src },
-      { name: "Simon", image: simonImg.src },
-      { name: "Valeriia", image: valeriiaImg.src },
+      { name: "Boney", image: boneyImg },
+      { name: "Fabrice", image: fabriceImg },
+      { name: "Martina", image: martinaImg },
+      { name: "Olivia", image: oliviaImg },
+      { name: "Simon", image: simonImg },
+      { name: "Valeriia", image: valeriiaImg },
     ]}
   />
 </CustomLayout>
-
-<style>
-  .text-max-width {
-    max-width: 600px;
-  }
-</style>

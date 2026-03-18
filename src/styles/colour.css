@@ -39,12 +39,12 @@
   --sl-color-text-accent: var(--green);
   --sl-color-text-invert: var(--white);
 
-  --sl-color-bg: #24372c;
-  --sl-color-bg-nav: #24372c;
-  --sl-color-bg-sidebar: #24372c;
+  --sl-color-bg: var(--white);
+  --sl-color-bg-nav: var(--white);
+  --sl-color-bg-sidebar: var(--white);
 
   --sl-color-hairline: var(--grey);
 
-  --sl-color-bg-inline-code: #1a2b21;
+  --sl-color-bg-inline-code: var(--white);
   --sl-color-bg-accent: var(--light-green);
 }
