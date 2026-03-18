@@ -1,12 +1,14 @@
-# Starlight Starter Kit: Basics
+# HEV Dokumentationsplattform
+
+Dieses Projekt ist eine benutzerfreundliche Dokumentationsplattform für interne Prozesse und Anleitungen. Ziel ist es, komplexe Abläufe strukturiert, verständlich und schnell zugänglich darzustellen.
+
+Die Webseite wurde im Rahmen der IPA entwickelt und basiert auf Astro mit dem Starlight-Framework.
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
 ```
 npm create astro@latest -- --template starlight
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
@@ -17,23 +19,20 @@ Inside of your Astro + Starlight project, you'll see the following folders and f
 ├── public/
 ├── src/
 │   ├── assets/
+│   ├── components/         # Wiederverwendbare Komponenten
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+│   │   └── docs/           # Markdown/MDX Inhalte (Anleitungen)
+│   ├── layouts/            # Layouts
+│   ├── pages/              # Astro Seiten
+│   ├── styles/             # Globales Styling, CSS-Variablen
+│   ├── utils/              # Hilfsfunktionen
+├── astro.config.mjs        # Astro Konfiguration
+├── README.md               # Projektdokumentation
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
-
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
-
-Static assets, like favicons, can be placed in the `public/` directory.
+Inhalte werden über .md / .mdx Dateien in src/content/docs/ gepflegt und automatisch als Seiten generiert.
 
 ## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
@@ -44,6 +43,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 👀 Möchten Sie mehr lehrnen?
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+Schaue hier [Starlight’s docs](https://starlight.astro.build/), lies [the Astro documentation](https://docs.astro.build), oder gehe zu [Astro Discord server](https://astro.build/chat).
