@@ -5,7 +5,6 @@
   --black: #24372c;
   --grey: #ededed;
 
-  /* Starlight überschreiben */
   --sl-color-accent-low: var(--light-green);
   --sl-color-accent: var(--green);
   --sl-color-accent-high: var(--black);

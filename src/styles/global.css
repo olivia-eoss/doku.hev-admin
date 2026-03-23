@@ -110,12 +110,9 @@ header:where(.astro-vrdttmbt) {
   opacity: 0.5;
 }
 
-
 .page > header > header {
   all: unset;
 }
-
-
 
 site-search dialog[open] {
   background: var(--white);
@@ -136,7 +133,6 @@ site-search dialog[open]::backdrop {
   backdrop-filter: blur(4px);
 }
 
-
 site-search dialog[open] .dialog-frame {
   padding: var(--spacing-sm);
   display: flex;
@@ -146,7 +142,6 @@ site-search dialog[open] .dialog-frame {
   max-height: 80vh;
   overflow-y: auto;
 }
-
 
 site-search dialog[open] input[type="text"] {
   width: 100%;
@@ -165,7 +160,6 @@ site-search dialog[open] input[type="text"]:focus {
   border-color: var(--green);
 }
 
-
 site-search dialog[open] button[data-close-modal] {
 padding: var(--spacing-xxs);
   background: none;
@@ -180,8 +174,6 @@ site-search dialog[open] button[data-close-modal]:hover {
   background: var(--grey);
   border-radius: 6px;
 }
-
-
 
 site-search dialog[open] .pagefind-ui {
   font-family: var(--font-body);
@@ -227,7 +219,6 @@ font-size: var(--font-size-body-mobile);
   color: var(--black);
 }
 
-
 site-search dialog[open] .pagefind-ui mark {
   background: rgba(46,133,85,.2);
   color: var(--black);
@@ -235,7 +226,6 @@ site-search dialog[open] .pagefind-ui mark {
   border-radius: 3px;
   font-weight: 600;
 }
-
 
 site-search dialog[open] .pagefind-ui__message {
   text-align: center;
